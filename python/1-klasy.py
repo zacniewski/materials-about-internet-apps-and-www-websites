@@ -74,3 +74,27 @@ class Dog3:
 dog3 = Dog3("Reksio", 2)
 print(dog3.description())
 print(dog3.speak("Hau, hau"))
+
+"""
+Żeby uprościć drukowanie informacji o obiektach można zdefiniować specjalną metode instancji, czyli __str__()
+Należy jej użyć zamiast metody description()
+"""
+
+class Dog4:
+    species = "Canis familiaris"
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    # Metoda instancji
+    def __str__(self):
+        return f"{self.name} ma {self.age} lat"
+
+    # Metoda instancji
+    def speak(self, sound):
+        return f"{self.name} mówi {sound}"
+
+
+dog4 = Dog4("Pusia", 9)
+print(dog4)
