@@ -60,12 +60,27 @@
 
         <p class="lead" id="akapit">Testowy akapit!</p>
 
-        <button type="button" class="btn btn-primary">
-        Notifications <span class="badge badge-light">4</span>
-        </button>
-        <button type="button" class="btn btn-primary">
-        Notifications <span class="badge badge-light">4</span>
-        </button>
+        <div>
+          <button type="button" class="btn btn-primary">
+          Notifications <span class="badge badge-light">4</span>
+          </button>
+
+          <button type="button" class="btn btn-primary">
+          Notifications <span class="badge badge-light">4</span>
+          </button>
+        </div>
+
+        <div>
+          <button id="guzik" onclick="buttonClickHandler()">
+            Najprostsza obsługa zdarzenia (onclick)
+          </button>
+        </div>
+
+        <div>
+          <button id="btn">
+            Obsługa zdarzenia przez addEventListener
+          </button>
+        </div>
         
       </div>
 
@@ -78,7 +93,9 @@
 
   <!-- moje skrypty -->
   <!--<script src="scripts/1-strict.js"></script>-->
-  <script src="scripts/2-funkcje.js"></script>
+  <!--<script src="scripts/2-funkcje.js"></script>-->
+  <script src="scripts/3-event-handling.js"></script>
+
 
   <script>
       $(document).ready(function(){
