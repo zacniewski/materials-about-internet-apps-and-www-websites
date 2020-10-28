@@ -92,6 +92,8 @@ const btn4 = document.getElementById('btn4');
 function clickHandler() {
     console.log('Kliknięto raz w przycisk btn4!');
     btn4.removeEventListener('click', clickHandler);
+    console.log('Usunięta obsługa kliknięcia w btn4!');
+
 }
 btn4.addEventListener('click', clickHandler);
 

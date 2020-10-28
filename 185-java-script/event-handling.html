@@ -18,7 +18,7 @@
 <body>
 
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
       <a class="navbar-brand" href="index.html">Serwisy WWW - 2020</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,21 +52,36 @@
     </div>
     <div class="row">
       <div class="col-lg-12 text-center">
-        <h2></h2>
-        <button type="button" class="btn btn-primary btn-lg" onclick=myFunction()>Zmień numer</button>
-        <button type="button" class="btn btn-primary btn-lg tg">Ukryj / pokaż akapit</button>
-
-        <p class="lead" id="akapit">Testowy akapit!</p>
-
         <div>
-          <button type="button" class="btn btn-primary">
-          Notifications <span class="badge badge-light">4</span>
-          </button>
-
-          <button type="button" class="btn btn-primary">
-          Notifications <span class="badge badge-light">4</span>
+          <button id="guzik" onclick="buttonClickHandler()">
+            Najprostsza obsługa zdarzenia (onclick)
           </button>
         </div>
+
+        <div>
+          <button id="btn">
+            Obsługa zdarzenia przez addEventListener nr 1
+          </button>
+        </div>
+
+        <div>
+          <button id="btn2">
+            Obsługa zdarzenia przez addEventListener nr 2
+          </button>
+        </div>
+
+        <div>
+          <button id="btn3">
+            Obsługa zdarzenia dla btn3
+          </button>
+        </div>
+
+        <div>
+          <button id="btn4">
+            removeEventListener dla btn4
+          </button>
+        </div>
+        
       </div>
 
     </div>
@@ -77,27 +92,7 @@
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- moje skrypty -->
-  <script src="scripts/1-strict.js"></script>
-  <script src="scripts/2-funkcje.js"></script>
-
-
-  <script>
-      $(document).ready(function(){
-        $(".tg").click(function(){
-          $("#akapit").toggle();
-        });
-      });
-  </script>
-
-  <script>
-      function myFunction() {
-        let x = document.getElementsByClassName("badge-light");
-        x[0].innerHTML = 666; // x[0] to pierwszy znaleziony element
-        x[1].innerHTML = 111; // x[0] to pierwszy znaleziony element
-
-      }
-  </script>
-
+  <script src="scripts/3-event-handling.js"></script>
 </body>
 
 </html>

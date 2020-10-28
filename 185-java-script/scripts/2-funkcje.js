@@ -29,13 +29,13 @@ Co ciekawe, gdy tworzymy funkcję jako wyrażenie funkcyjne, czyli — w pewnym 
 nazwy wskazanej po słowie function:
 */
 
-const fn = function suma1 (a, b) {
-    console.log("Wykonano fn");
+const fn2 = function suma1 (a, b) {
+    console.log("Wykonano fn2");
     return a + b;
 };
 
 //suma1(5, 5); // Uncaught ReferenceError: suma1 is not defined
-fn(5, 5); //10
+fn2(5, 5); //10
 
 /*
 Wywołanie funkcji po nazwie 'suma1' powoduje zgłoszenie błędu, gdyż nasza funkcja jest dostępna
@@ -44,12 +44,12 @@ Stosując wyrażenia funkcyjne najczęściej używa się tzw. funkcji anonimowyc
 z pominięciem nazwy:
 */ 
 
-const fn1 = function (a, b) {
-    console.log("Wykonano fn1 = ", a + b);
+const fn3 = function (a, b) {
+    console.log("Wykonano fn3 = ", a + b);
     return a + b;
 };
 
-fn1(44, 62)
+fn3(44, 62)
 /*
 lub zapisu określanego jako arrow function (tzw. funkcje strzałkowe), które zapisuje się jako:
 */
