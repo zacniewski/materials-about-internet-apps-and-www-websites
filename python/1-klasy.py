@@ -35,7 +35,11 @@ class Dog2:
 
 # utworzenie obiektu klasy Dog2        
 dog2 = Dog2("Reks", 3)
+dog2a = Dog2("Duży Reks", 32)
+
 print(f"{dog2.name} ma {dog2.age} lata i należy do gatunku {dog2.species}")
+print(f"{dog2a.name} ma {dog2a.age} lata i należy do gatunku {dog2a.species}")
+
 
 """
 Jedną z największych zalet używania klas do organizowania danych jest to, 
@@ -47,6 +51,7 @@ Chociaż atrybuty na pewno istnieją, ich wartości można zmieniać dynamicznie
 Co w innych językach programowania jest do osiągnięcia za pomocą setterów/getterów.
 """
 dog2.age = 5
+dog2.species = "Kundelos"
 print(f"{dog2.name} ma {dog2.age} lata i należy do gatunku {dog2.species}")
 
 """
@@ -67,7 +72,7 @@ class Dog3:
 
     # Metoda instancji
     def speak(self, sound):
-        return f"{self.name} mówi {sound}"
+        return f"{self.name} szczeka {sound}"
 
 
 # utworzenie obiektu klasy Dog3        
