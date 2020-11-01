@@ -2,7 +2,7 @@
 
 Rejestrując nasłuchiwanie na jakieś zdarzenie, często będziemy musieli również pobrać parame-
 try tego zdarzenia, takie jak pozycja myszki, referencja do elementu, na którym wystąpiło
-zdarzenie itp. W tym celu możemy wykorzystać specjalny obiekt event, który jest para-
+zdarzenie itp. W tym celu możemy wykorzystać specjalny obiekt 'event', który jest para-
 metrem każdej funkcji uruchamianej jako obsługa zdarzenia
 */
 
@@ -26,3 +26,14 @@ również pole textContent, które w tym przypadku zawiera po prostu treść nap
 przycisku <button>. Gdy uruchomimy ten kod w przeglądarce, to po kliknięciu przycisku
 w konsoli zobaczymy napis z guzika
 */
+
+/*
+Dysponując referencją do elementu, możemy
+zmieniać również inne jego parametry, np. zmieńmy po kliknięciu tło przycisku z domyślnego
+szarego na kolor czerwony:
+*/
+
+const btn = document.getElementById('btn');
+btn.addEventListener('click', event => {
+    event.target.style.backgroundColor = 'red';
+});
