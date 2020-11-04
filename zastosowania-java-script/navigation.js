@@ -7,6 +7,13 @@
 */
 
 let menu_div = document.getElementsByClassName('dropdown-menu')[0];
+
+let aTag0 = document.createElement('a');
+aTag0.setAttribute('href',"ponowne-wprowadzenie-do-JavaScript.html");
+aTag0.textContent= "Ponowne wprowadzenie do JS";
+aTag0.className = "dropdown-item";
+menu_div.appendChild(aTag0);
+
 let aTag = document.createElement('a');
 aTag.setAttribute('href',"index.html");
 aTag.textContent= "Tryb ścisły + funkcje";
