@@ -8,4 +8,5 @@
   * folder 'Python-OOP' zawiera programy napisane obiektowo w Pythonie  
   * folder 'Gra-Breakout-JavaScript' zawiera kompletny kod gry Breakout 2D z tutorialu [MDN](https://developer.mozilla.org/pl/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript)  
   * folder 'django-for-api-wincent' zawiera projekt 'library' (podstawowy projekt Django + DRF) oraz projekt 'ToDo' (podstawowe połączenie Django + DRF + CORS + React)  
+   * folder 'social-website' zawiera projekt 'bookmarks' (podstawowy projekt Django) z aplikacją 'account' autorstwa [Antonio Mele](https://github.com/PacktPublishing/Django-3-by-Example/tree/master/Chapter04)  
   
