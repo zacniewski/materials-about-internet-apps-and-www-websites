@@ -37,3 +37,10 @@ aTag4.setAttribute('href',"mouse-moves-and-clicks.html");
 aTag4.textContent= "Zdarzenia ruchu i kliknięć myszką";
 aTag4.className = "dropdown-item";
 menu_div.appendChild(aTag4);
+
+let aTag5 = document.createElement('a');
+aTag5.setAttribute('href',"async.html");
+aTag5.textContent= "Asynchroniczność";
+aTag5.className = "dropdown-item";
+menu_div.appendChild(aTag5);
+
