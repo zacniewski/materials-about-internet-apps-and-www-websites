@@ -10,3 +10,4 @@
   * folder 'django-for-api-wincent' zawiera projekt 'library' (podstawowy projekt Django + DRF) oraz projekt 'ToDo' (podstawowe połączenie Django + DRF + CORS + React)  
   * folder 'social-website' zawiera projekt 'bookmarks' (podstawowy projekt Django) z aplikacją 'account' autorstwa [Antonio Mele](https://github.com/PacktPublishing/Django-3-by-Example/tree/master/Chapter04)  
   * folder 'react-typeofweb' zawiera proste projekty React ze strony [Type of Web](https://typeofweb.com/wprowadzenie-kurs-react-js/)    
+  * folder 'klikacz-jQuery' zawiera przykład użycia localStorage do wypełniania tabel określonymi wartościami danych  
