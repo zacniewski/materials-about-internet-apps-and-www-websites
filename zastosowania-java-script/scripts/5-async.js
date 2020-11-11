@@ -69,3 +69,53 @@ jemy, że jakaś wartość się pojawi, nie obiecujemy jednak w żadnym wypadku,
 — pozytywna czy negatywna. Istotny jest sam fakt oczekiwania na tzw. przyszłą, nieznaną
 na początku wartość.
 */
+
+/*
+Tworzenie obietnic
+
+Aby stworzyć nową obietnicę, wykorzystujemy konstruktor obiektu Promise, a jako parametr
+przekazujemy mu funkcję pobierającą dwa argumenty: resolve oraz reject. Oczywiście nazwy
+tych argumentów mogą być dowolne, lecz przyjęło się raczej stosować właśnie takie nazewnic-
+two i zachęcam Cię, abyś też trzymał się tej zasady. Resolve i reject to funkcje, które wywo-
+łujemy w odpowiednim momencie dla pozytywnego lub negatywnego rozwiązania obietnicy
+(resolve), np. gdy wystąpi błąd (reject). Aby lepiej to zobrazować, przejdźmy do przykładu:
+*/
+
+function getArticle(id) {
+    return new Promise((resolve, reject) => {
+        if (id === '123') {
+            resolve({title: 'Podstawy JavaScript', author: 'Jan Kowalski'});
+        } else {
+            reject('Nie znaleziono artykułu o takim id.');
+        }
+    });
+}
+
+/*
+ W jaki sposób możemy teraz wykorzystać funkcję getArticle?
+ */
+
+getArticle('123').then(data => console.log(data));
+getArticle('bzzz').then(data => console.log(data));
+
+
+/*
+Funkcja getArticle pobiera jeden parametr, którym jest identyfikator szukanego artykułu, i na
+tej podstawie zwraca jego tytuł i autora lub informację, że artykułu nie znaleziono. W realnej
+aplikacji prawdopodobnie znalazłoby się tutaj zapytanie skierowane do serwera i sprawdzenie,
+czy szukany artykuł znajduje się w bazie danych. Zauważ jednak, że wewnątrz funkcji
+getArticle zwracamy obiekt Promise, czyli nową obietnicę. W jej wnętrzu weryfikujemy
+istnienie artykułu, co na potrzeby prostego przykładu robimy poprzez zwykłe przyrównanie
+identyfikatora do przykładowej wartości 123. Dla takiego identyfikatora wywołujemy funkcję
+resolve, a dla innego funkcję reject.
+
+Funkcja resolve przyjmuje jako parametr dane, które następnie będzie można wykorzystać
+np. w celu wyświetlenia artykułu na stronie. Może to być obiekt, tablica, liczba, ciąg znakowy itp.
+Najczęściej spotkamy się z przekazywaniem obiektów, choć w niektórych przypadkach będą to
+także typy proste, zależnie od konkretnej sytuacji i potrzeby.
+Funkcja reject przyjmuje jako parametr dane, które zostaną zwrócone jako obietnica zakoń-
+czona niepowodzeniem. Często przekazuje się tutaj ciąg znakowy opisujący problem, co można
+łatwo np. wyświetlić użytkownikowi. Może to jednak być również każdy inny typ, np. obiekt za-
+wierający bardziej szczegółowe informacje o błędzie.
+
+*/
