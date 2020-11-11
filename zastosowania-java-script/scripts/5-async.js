@@ -118,4 +118,70 @@ czona niepowodzeniem. Często przekazuje się tutaj ciąg znakowy opisujący pro
 łatwo np. wyświetlić użytkownikowi. Może to jednak być również każdy inny typ, np. obiekt za-
 wierający bardziej szczegółowe informacje o błędzie.
 
+Funkcja getArticle zwraca obiekt Promise, który posiada trzy podstawowe metody: then,
+catch oraz finally. Metoda then służy do obsługi sytuacji, w której obietnica została rozwiązana
+z powodzeniem. Przy tworzeniu obietnicy ustawiamy moment jej pozytywnego rozwiązania,
+wywołując metodę resolve , której możemy przekazać dowolny parametr. W naszym przypadku
+parametrem tym był obiekt zawierający dwa pola: title oraz author. Aby skorzystać z tych
+danych, musimy wywołać metodę then na obietnicy, czyli na obiekcie zwróconym przez
+funkcję getArticle.
+
+Metoda then może przyjąć jeden parametr, którym jest funkcja zawierająca wartość użytą
+podczas wywołania metody resolve przy tworzeniu tej obietnicy. W naszym wypadku obiekt
+data w metodzie then zawiera więc obiekt z polem title oraz author.
+Jeśli wywołamy funkcję getArticle, przekazując jej jako parametr ciąg inny niż 123, to
+zgodnie z implementacją tej funkcji wpadniemy nie w wywołanie metody resolve, lecz w wy-
+wołanie metody reject, która jako parametr przyjmuje ciąg znakowy informujący o braku
+artykułu o wskazanym identyfikatorze. Aby przechwycić moment rozwiązania obietnicy
+niepowodzeniem (czyli wywołania reject), musimy obsłużyć ten przypadek metodą catch.
+Metoda ta również jako parametr przyjmuje wartość przekazaną do metody reject przy
+tworzeniu obietnicy.
+Ważne, abyś zapamiętał, że dobrą praktyką jest zawsze obsługiwanie obu sytuacji, czyli
+pozytywnego i negatywnego rozwiązania obietnicy. Jeśli wpadniemy w metodę then , wywo-
+łując funkcję getArticle, to metoda catch nie zostanie w ogóle wywołana. Podobnie w przy-
+padku niepowodzenia wywołanie metody catch sprawia, że metoda then w ogóle nie zostaje
+uruchomiona.
+Sprawa ta nieco się komplikuje przy bardziej rozbudowanych sytuacjach i wielokrotnych
+wywołaniach then/ catch, ale w większości prostych przypadków trafimy na scenariusz podobny
+do przedstawionego powyżej. Aby móc obsłużyć oba przypadki, musimy więc zaimplementować
+zarówno metodę then, jak i catch:
+
+getArticle('123')
+.then(data => console.log(data))
+.catch(error => console.log(error))
+
+W tym przypadku podobny efekt możemy uzyskać poprzez użycie tylko metody then, dzięki
+wykorzystaniu faktu, że może ona pobierać dwa parametry — funkcję dla rozwiązania pozytyw-
+nego oraz negatywnego (drugi parametr):
+
+getArticle('123').then(
+data => console.log(data),
+error => console.log(error)
+);
+
+Oba warianty są poprawne, choć wiele osób uważa, że zapis z jawnym wywołaniem then i catch
+jest nieco czytelniejszy i ułatwia szybką analizę kodu. Warto poćwiczyć pracę z obietnicami,
+stosując oba warianty, aby mieć świadomość ich istnienia, a później wybrać ten, który bardziej
+Ci odpowiada lub który jest przyjęty np. w danym zespole programistów czy w konkretnym
+projekcie.
+
+Czasami zdarza się, że chcemy wywołać jakąś akcję zarówno w metodzie then, jak i catch.
+Jednym z przykładów może być np. asynchroniczne wczytywanie danych z serwera. Po rozpo-
+częciu pobierania danych w wielu aplikacjach możemy zobaczyć informację Trwa pobieranie
+danych... czy wersję graficzną (tzw. preloader). Po otrzymaniu odpowiedzi z serwera musimy
+obsłużyć przypadek pozytywny (np. wyświetlenie danych użytkownikowi) oraz niepowodzenie
+
+(np. błąd na serwerze, przekroczenie dopuszczalnego czasu na odpowiedź itp.), pokazując
+odpowiedni komunikat o błędzie. W obu przypadkach chcemy jednak przestać wyświetlać in-
+formację o trwającym pobieraniu danych. Akcję jej ukrywania możemy więc powielić w meto-
+dzie then oraz catch lub wykorzystać w tym celu metodę finally:
+*/
+
+getArticle('123')
+    .then(data => console.log(data))
+    .catch(error => console.log(error))
+    .finally(() => console.log('Koniec'));
+
+/*
+
 */
