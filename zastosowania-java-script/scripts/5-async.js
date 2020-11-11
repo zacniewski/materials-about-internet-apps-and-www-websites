@@ -95,8 +95,8 @@ function getArticle(id) {
  W jaki sposób możemy teraz wykorzystać funkcję getArticle?
  */
 
-getArticle('123').then(data => console.log(data));
-getArticle('bzzz').then(data => console.log(data));
+getArticle('123').then(data => console.log("example 1:", data));
+getArticle('bzzz').then(data => console.log("example 1:",data));
 
 
 /*
@@ -145,20 +145,24 @@ Sprawa ta nieco się komplikuje przy bardziej rozbudowanych sytuacjach i wielokr
 wywołaniach then/ catch, ale w większości prostych przypadków trafimy na scenariusz podobny
 do przedstawionego powyżej. Aby móc obsłużyć oba przypadki, musimy więc zaimplementować
 zarówno metodę then, jak i catch:
+*/
 
 getArticle('123')
-.then(data => console.log(data))
-.catch(error => console.log(error))
+    .then(data => console.log("example 2:",data))
+    .catch(error => console.log("example 2:",error))
 
+/*
 W tym przypadku podobny efekt możemy uzyskać poprzez użycie tylko metody then, dzięki
 wykorzystaniu faktu, że może ona pobierać dwa parametry — funkcję dla rozwiązania pozytyw-
 nego oraz negatywnego (drugi parametr):
+*/
 
 getArticle('123').then(
-data => console.log(data),
-error => console.log(error)
+    data => console.log("example 3:",data),
+    error => console.log("example 3:",error)
 );
 
+/*
 Oba warianty są poprawne, choć wiele osób uważa, że zapis z jawnym wywołaniem then i catch
 jest nieco czytelniejszy i ułatwia szybką analizę kodu. Warto poćwiczyć pracę z obietnicami,
 stosując oba warianty, aby mieć świadomość ich istnienia, a później wybrać ten, który bardziej
@@ -178,10 +182,85 @@ dzie then oraz catch lub wykorzystać w tym celu metodę finally:
 */
 
 getArticle('123')
-    .then(data => console.log(data))
-    .catch(error => console.log(error))
-    .finally(() => console.log('Koniec'));
+    .then(data => console.log("example 4:",data))
+    .catch(error => console.log("example 4:",error))
+    .finally(() => console.log('"example 4 - koniec'));
 
 /*
+Praca z obietnicami przy użyciu składni async/await
+
+Mając funkcję getArticle, możemy jej użyć również w nieco inny sposób, wykorzystując
+nowszą składnię async/await. Na początek jednak zróbmy kolejną funkcję, której zadaniem
+będzie ustawienie parametrów pobranego artykułu:
+*/
+function setArticleData5(id) {
+    getArticle(id)
+        .then(data => console.log("example 5:",data.title))
+        .catch(error => console.log("example 5:",error))
+}
+
+console.log("example 5:",setArticleData5('123'));  // Podstawy JavaScript
+
+/*
+Funkcja ta w swojej implementacji wywołuje funkcję getArticle, obsługując odpowiednio
+metody then i catch. W naszym przypadku wyświetli ona po prostu tytuł artykułu w konsoli.
+
+W aplikacji mogłaby natomiast służyć na przykład do ustawienia danych służących do odświe-
+żenia strony i wyświetlenia zaktualizowanego tytułu czy innych parametrów artykułu.
+Nie musimy jednak jawnie wywoływać metod then oraz catch. Możemy skorzystać z tzw.
+funkcji asynchronicznych:
+*/
+
+async function setArticleData6(id) {
+    const article = await getArticle(id);
+    console.log("example 6:",article.title);
+}
+
+console.log("example 6:",setArticleData6('123')); // Podstawy JavaScript
+
+/*
+Zauważ dwa istotne elementy — słowo kluczowe async dodane przed deklaracją funkcji setArticleData oraz, 
+co jest warunkiem koniecznym, aby móc wykorzystać drugie słowo kluczo-
+we await, użyte już w implementacji funkcji. 
+
+Zapis:
+const article = await getArticle(id);
+
+powoduje poczekanie na rozwiązanie obietnicy zwracanej przez metodę getArticle (o czym
+mówi nam słowo await ), a następnie przypisanie rezultatu obietnicy do stałej article.
+W stałej tej znajdzie się więc nasz obiekt data z poprzedniego przykładu, gdzie używaliśmy
+jawnie metody then. Wiele osób preferuje zapis z użyciem składni async/await, argumentując
+to większą czytelnością kodu. Na pierwszy rzut oka może on sprawiać wrażenie synchro-
+nicznego, gdyż metoda console.log — a dokładniej kolejna instrukcja po await — zostanie
+wywołana dopiero po rozwiązaniu tej obietnicy. W praktyce jednak jest to tylko nieco inna
+składnia, a sama obietnica nadal jest rozwiązywana asynchronicznie, jak przy jawnym użyciu
+metody then.
+
+Oba warianty są poprawne i mogą być stosowane zamiennie, warto jednak zacho-
+wać spójność w obrębie jednego projektu, by ułatwić czytanie i analizowanie kodu. Ponadto
+używając tej składni, pamiętajmy, aby obowiązkowo deklarować funkcje ze słowem async
+wraz ze słowem await przy wywołaniu funkcji zwracającej obietnicę. Jeśli wywołamy metodę
+await, lecz zapomnimy o dodaniu słowa async, to dostaniemy odpowiedni komunikat błędu
+w konsoli:
+
+Uncaught SyntaxError: await is only valid in async function
+
+Taki przypadek szybko zostanie więc wykryty i naprawiony. Gorzej jednak, gdy funkcję zadekla-
+rujemy co prawda jako async, lecz zapomnimy o słowie await:
+*/ 
+async function setArticleData7(id) {
+    const article = getArticle(id); // brak słowa await
+    console.log("example 7:",article.title);
+}
+
+setArticleData7('123'); // undefined
+/* 
+Tym razem w konsoli nie pojawi się błąd, ale nie zobaczymy też oczekiwanego tytułu artykułu,
+tylko wartość undefined. W tym przypadku w stałej article zostaje przypisany obiekt zwrócony
+przez metodę getArticle, czyli obiekt Promise. Nie obsługujemy jednak w żaden sposób rezul-
+tatu rozwiązania tej obietnicy, gdyż nie ma ani słowa await, ani jawnego wywołania metody
+then . W związku z tym article zawiera po prostu obiekt Promise, który nie posiada oczywiście
+metody title, a jak wiemy, próba odczytu nieistniejącego pola z obiektu zwraca właśnie
+wartość undefined.
 
 */
