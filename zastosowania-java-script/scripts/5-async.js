@@ -271,5 +271,49 @@ tatu rozwiązania tej obietnicy, gdyż nie ma ani słowa await, ani jawnego wywo
 then . W związku z tym article zawiera po prostu obiekt Promise, który nie posiada oczywiście
 metody title, a jak wiemy, próba odczytu nieistniejącego pola z obiektu zwraca właśnie
 wartość undefined.
-
 */
+
+/*
+Obsługa błędów w pracy z obietnicami
+
+Skoro znamy już dwa sposoby pracy z obietnicami, to zastanówmy się, jak prawidłowo obsługi-
+wać błędy, które mogą wystąpić np. podczas pracy z zapytaniami do serwera. Tworząc
+obiekt obietnicy, w większości przypadków obsługuje się zarówno sytuacje pozytywne, jak i ne-
+gatywne poprzez odpowiednie wywołania metody resolve czy reject (nazwy te mogą być
+oczywiście dowolne, ale będziemy stosować właśnie takie, które są ogólnie
+przyjęte, i Ciebie również zachęcam do używania ich w swoich aplikacjach w celu ułatwienia
+analizy kodu).
+*/
+
+function exampleReject() {
+    return new Promise((_, reject) => {
+        setTimeout(() => reject('Wystąpił błąd'), 2000);
+    });
+}
+
+/*
+Na początek stworzyliśmy prostą funkcję exampleReject, zwracającą obietnicę, która za każdym
+razem zakończy się niepowodzeniem, gdyż istnieje w niej tylko wywołanie reject. Zauważ
+jednocześnie, w jaki sposób zapisaliśmy pierwszy argument. Znak dolnego podkreślenia jest czę-
+sto stosowany w przypadku, gdy jakiś parametr nas nie interesuje w dalszej części kodu, ale
+musi zostać jawnie podany, aby zachować odpowiednią kolejność parametrów funkcji. Oczywi-
+ście nazwa ta jest tylko umowna, równie dobrze mogliśmy zastosować nazwę resolve.
+*/
+
+/*
+Przypomnijmy sobie, jak przechwytujemy negatywne rozwiązanie obietnicy, stosując jawnie
+metody then, catch oraz finally:
+*/
+
+function asyncCall() {
+    console.log('example 8: Start');
+    exampleReject()
+        .catch(error => console.log("example 8:", error))
+        .finally(() => console.log('example 8: Koniec'));
+}
+
+asyncCall();
+// Start
+// Wystąpił błąd
+// Koniec
+
