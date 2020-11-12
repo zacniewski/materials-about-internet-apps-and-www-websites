@@ -96,7 +96,7 @@ function getArticle(id) {
  */
 
 getArticle('123').then(data => console.log("example 1:", data));
-getArticle('bzzz').then(data => console.log("example 1:",data));
+getArticle('bzzz').catch(data => console.log("example 1:",data));
 
 
 /*
@@ -113,6 +113,7 @@ Funkcja resolve przyjmuje jako parametr dane, które następnie będzie można w
 np. w celu wyświetlenia artykułu na stronie. Może to być obiekt, tablica, liczba, ciąg znakowy itp.
 Najczęściej spotkamy się z przekazywaniem obiektów, choć w niektórych przypadkach będą to
 także typy proste, zależnie od konkretnej sytuacji i potrzeby.
+
 Funkcja reject przyjmuje jako parametr dane, które zostaną zwrócone jako obietnica zakoń-
 czona niepowodzeniem. Często przekazuje się tutaj ciąg znakowy opisujący problem, co można
 łatwo np. wyświetlić użytkownikowi. Może to jednak być również każdy inny typ, np. obiekt za-
@@ -127,13 +128,16 @@ danych, musimy wywołać metodę then na obietnicy, czyli na obiekcie zwróconym
 funkcję getArticle.
 
 Metoda then może przyjąć jeden parametr, którym jest funkcja zawierająca wartość użytą
-podczas wywołania metody resolve przy tworzeniu tej obietnicy. W naszym wypadku obiekt
-data w metodzie then zawiera więc obiekt z polem title oraz author.
+podczas wywołania metody resolve przy tworzeniu tej obietnicy. 
+
+W naszym wypadku obiekt data w metodzie then zawiera więc obiekt z polem title oraz author.
 Jeśli wywołamy funkcję getArticle, przekazując jej jako parametr ciąg inny niż 123, to
 zgodnie z implementacją tej funkcji wpadniemy nie w wywołanie metody resolve, lecz w wy-
 wołanie metody reject, która jako parametr przyjmuje ciąg znakowy informujący o braku
-artykułu o wskazanym identyfikatorze. Aby przechwycić moment rozwiązania obietnicy
-niepowodzeniem (czyli wywołania reject), musimy obsłużyć ten przypadek metodą catch.
+artykułu o wskazanym identyfikatorze. 
+
+Aby przechwycić moment rozwiązania obietnicy niepowodzeniem (czyli wywołania reject), 
+musimy obsłużyć ten przypadek metodą catch.
 Metoda ta również jako parametr przyjmuje wartość przekazaną do metody reject przy
 tworzeniu obietnicy.
 Ważne, abyś zapamiętał, że dobrą praktyką jest zawsze obsługiwanie obu sytuacji, czyli
@@ -199,8 +203,8 @@ function setArticleData5(id) {
         .catch(error => console.log("example 5:",error))
 }
 
-console.log("example 5:",setArticleData5('123'));  // Podstawy JavaScript
-
+setArticleData5('123');  // Podstawy JavaScript
+setArticleData5('1234');
 /*
 Funkcja ta w swojej implementacji wywołuje funkcję getArticle, obsługując odpowiednio
 metody then i catch. W naszym przypadku wyświetli ona po prostu tytuł artykułu w konsoli.
@@ -220,8 +224,8 @@ console.log("example 6:",setArticleData6('123')); // Podstawy JavaScript
 
 /*
 Zauważ dwa istotne elementy — słowo kluczowe async dodane przed deklaracją funkcji setArticleData oraz, 
-co jest warunkiem koniecznym, aby móc wykorzystać drugie słowo kluczo-
-we await, użyte już w implementacji funkcji. 
+co jest warunkiem koniecznym, aby móc wykorzystać drugie słowo kluczowe await, 
+użyte już w implementacji funkcji. 
 
 Zapis:
 const article = await getArticle(id);
@@ -229,7 +233,9 @@ const article = await getArticle(id);
 powoduje poczekanie na rozwiązanie obietnicy zwracanej przez metodę getArticle (o czym
 mówi nam słowo await ), a następnie przypisanie rezultatu obietnicy do stałej article.
 W stałej tej znajdzie się więc nasz obiekt data z poprzedniego przykładu, gdzie używaliśmy
-jawnie metody then. Wiele osób preferuje zapis z użyciem składni async/await, argumentując
+jawnie metody then. 
+
+Wiele osób preferuje zapis z użyciem składni async/await, argumentując
 to większą czytelnością kodu. Na pierwszy rzut oka może on sprawiać wrażenie synchro-
 nicznego, gdyż metoda console.log — a dokładniej kolejna instrukcja po await — zostanie
 wywołana dopiero po rozwiązaniu tej obietnicy. W praktyce jednak jest to tylko nieco inna
@@ -239,8 +245,9 @@ metody then.
 Oba warianty są poprawne i mogą być stosowane zamiennie, warto jednak zacho-
 wać spójność w obrębie jednego projektu, by ułatwić czytanie i analizowanie kodu. Ponadto
 używając tej składni, pamiętajmy, aby obowiązkowo deklarować funkcje ze słowem async
-wraz ze słowem await przy wywołaniu funkcji zwracającej obietnicę. Jeśli wywołamy metodę
-await, lecz zapomnimy o dodaniu słowa async, to dostaniemy odpowiedni komunikat błędu
+wraz ze słowem await przy wywołaniu funkcji zwracającej obietnicę. 
+
+Jeśli wywołamy metodę await, lecz zapomnimy o dodaniu słowa async, to dostaniemy odpowiedni komunikat błędu
 w konsoli:
 
 Uncaught SyntaxError: await is only valid in async function
