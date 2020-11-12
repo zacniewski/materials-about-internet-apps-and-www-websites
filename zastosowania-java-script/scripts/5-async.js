@@ -317,3 +317,35 @@ asyncCall();
 // Wystąpił błąd
 // Koniec
 
+/*
+W jaki sposób obsłużyć błędy, wykorzystując składnię async/await?
+
+Chyba najczęściej spotykane rozwiązanie w poradnikach i artykułach, 
+to po prostu zastosowanie znanego nam już z języka JavaScript bloku try-catch,
+który w razie potrzeby może zostać wzbogacony również o blok finally:
+*/
+
+async function asyncCall2() {
+    console.log('example 9: Start');
+    try {
+        const someValue = await exampleReject();
+    } 
+    catch (error) {
+        console.log('example 9:', error);
+    } 
+    finally {
+        console.log('example 9: Koniec');
+    }
+}
+asyncCall2();
+
+// Start
+// Wystąpił błąd
+// Koniec
+
+/*
+Ważne jest, aby wszystkie wywołania używające słowa kluczowego await znajdowały się w bloku
+try. Jeżeli obietnica zostanie rozwiązana negatywnie, nasz kod przejdzie do bloku catch, co
+jest odpowiednikiem wejścia w metodę catch w poprzednim przykładzie.
+
+*/
