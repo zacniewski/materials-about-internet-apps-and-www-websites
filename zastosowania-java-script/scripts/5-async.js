@@ -349,3 +349,78 @@ try. Jeżeli obietnica zostanie rozwiązana negatywnie, nasz kod przejdzie do bl
 jest odpowiednikiem wejścia w metodę catch w poprzednim przykładzie.
 
 */
+
+/*
+Wielokrotne wywołania then i catch
+
+Czasami będziemy chcieli skorzystać z dwóch lub więcej funkcji zwracających obietnice.
+Sytuacja taka może wystąpić np. przy kaskadowych zapytaniach do API, gdzie pierwszym
+zapytaniem pobieramy dane potrzebne do wykonania kolejnego żądania. Praca z takimi
+wielokrotnymi obietnicami w zasadzie nie różni się wiele od pojedynczego obiektu Promise.
+Przeanalizujmy poniższy przykład, w którym tworzymy dwie funkcje asynchronicznie
+sprawdzające podaną liczbę. 
+
+Funkcja setNumber rozwiązuje obietnicę pozytywnie, gdy cyfra
+jest większa od trzech, natomiast kolejna metoda checkNumber rozwiąże obietnicę pozytywnie dla
+cyfr większych od czterech.
+*/
+
+function setNumber(number) {
+    return new Promise((resolve, reject) => {
+        if (number > 3) {
+            resolve(number);
+        } else {
+            reject('example 10: Błąd w setNumber');
+        }
+    });
+}
+
+function checkNumber(number) {
+    return new Promise((resolve, reject) => {
+        if (number > 4) {
+            resolve('example 10: ok');
+        } else {
+            reject('example 10: Błąd w checkNumber');
+        }
+    });
+}
+
+/*
+Oczywiście w praktyce takie funkcje raczej nie mają większego sensu, lecz pozwolą nam w prosty
+sposób wykonać kilka testów, aby zobaczyć, jak wygląda kolejno rozwiązywanie poszczególnych
+obietnic. Stworzymy w tym celu pomocniczą metodę examplePromise, której zadaniem jest
+wywołanie najpierw pierwszej funkcji setNumber, a następnie w przypadku rozwiązania pozy-
+tywnego wywołanie funkcji checkNumber.
+*/
+
+function examplePromise(n) {
+    setNumber(n)
+        .then(number => {
+            checkNumber(number)
+                .then(status => console.log('example 10:',status))
+                .catch(error => console.log('example 10:', error))
+                })
+        .catch(error => console.log('example 10:', error));
+}
+
+examplePromise(5); // ok
+examplePromise(4); // Błąd w checkNumber
+examplePromise(3); // Błąd w setNumber
+
+/*
+Jak łatwo wywnioskować z implementacji obu funkcji, dla cyfry 5 obie obietnice rozwiążą
+się pozytywnie, więc zgodnie z oczekiwaniami otrzymujemy w konsoli napis ok, co potwierdza
+wejście w metody then obu obietnic.
+
+W przypadku cyfry 4 pierwsza obietnica zostaje zakończona powodzeniem, co skutkuje wywo-
+łaniem funkcji checkNumber. Tym razem jednak liczba nie jest większa od czterech, dlatego
+obietnica z funkcji checkNumber zostaje rozwiązana negatywnie. Wpadamy zatem w metodę
+catch i pokazujemy w konsoli błąd, który przechwyciliśmy wywołaniem reject (Błąd
+w checkNumber).
+
+Z kolei dla cyfry 3 od razu wpadamy w blok catch funkcji setNumber, a funkcja checkNumber
+nigdy nie zostaje wywołana. Ważne jest, aby zawsze pamiętać o prawidłowej obsłudze błędów,
+jakie mogą wystąpić w różnych akcjach asynchronicznych, szczególnie jeśli są to akcje istotne dla
+dalszego działania aplikacji. Obowiązkowo należy obsługiwać błędy np. podczas pracy z API
+czy urządzeniami użytkownika, jak dostęp do kamery, mikrofonu itp.
+*/
