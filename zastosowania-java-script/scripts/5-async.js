@@ -103,7 +103,9 @@ getArticle('bzzz').catch(data => console.log("example 1:",data));
 Funkcja getArticle pobiera jeden parametr, którym jest identyfikator szukanego artykułu, i na
 tej podstawie zwraca jego tytuł i autora lub informację, że artykułu nie znaleziono. W realnej
 aplikacji prawdopodobnie znalazłoby się tutaj zapytanie skierowane do serwera i sprawdzenie,
-czy szukany artykuł znajduje się w bazie danych. Zauważ jednak, że wewnątrz funkcji
+czy szukany artykuł znajduje się w bazie danych. 
+
+Zauważ jednak, że wewnątrz funkcji
 getArticle zwracamy obiekt Promise, czyli nową obietnicę. W jej wnętrzu weryfikujemy
 istnienie artykułu, co na potrzeby prostego przykładu robimy poprzez zwykłe przyrównanie
 identyfikatora do przykładowej wartości 123. Dla takiego identyfikatora wywołujemy funkcję
@@ -185,10 +187,10 @@ formację o trwającym pobieraniu danych. Akcję jej ukrywania możemy więc pow
 dzie then oraz catch lub wykorzystać w tym celu metodę finally:
 */
 
-getArticle('123')
+getArticle('1235')
     .then(data => console.log("example 4:",data))
     .catch(error => console.log("example 4:",error))
-    .finally(() => console.log('"example 4 - koniec'));
+    .finally(() => console.log('example 4 - koniec pobierania'));
 
 /*
 Praca z obietnicami przy użyciu składni async/await
