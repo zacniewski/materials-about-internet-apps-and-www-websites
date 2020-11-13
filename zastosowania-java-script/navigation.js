@@ -40,7 +40,14 @@ menu_div.appendChild(aTag4);
 
 let aTag5 = document.createElement('a');
 aTag5.setAttribute('href',"async.html");
-aTag5.textContent= "Asynchroniczność";
+aTag5.textContent= "Asynchroniczność - part I";
 aTag5.className = "dropdown-item";
 menu_div.appendChild(aTag5);
+
+let aTag6 = document.createElement('a');
+aTag6.setAttribute('href',"async-2.html");
+aTag6.textContent= "Asynchroniczność - part II";
+aTag6.className = "dropdown-item";
+menu_div.appendChild(aTag6);
+
 

@@ -424,3 +424,95 @@ jakie mogą wystąpić w różnych akcjach asynchronicznych, szczególnie jeśli
 dalszego działania aplikacji. Obowiązkowo należy obsługiwać błędy np. podczas pracy z API
 czy urządzeniami użytkownika, jak dostęp do kamery, mikrofonu itp.
 */
+
+/*
+Przykład 1. — koszyk z zakupami użytkownika
+
+W pierwszym przykładzie stworzymy prostą aplikację symulującą panel administracyjny
+sklepu internetowego. Będzie ona zawierała przycisk służący do pobrania z serwera listy zaku-
+pów zrealizowanych przez wskazanego użytkownika i wyświetlenia mu liczby tych zamó-
+wień. Kliknięcie przycisku spowoduje wywołanie asynchronicznej funkcji, która w rzeczy-
+wistej aplikacji wysłałaby zapytanie do serwera w celu pobrania informacji z bazy danych.
+Taka operacja może trwać nawet do kilku sekund, dlatego do czasu jej zakończenia (pozy-
+tywnego bądź negatywnego) będziemy chcieli zablokować możliwość powtórnego wysłania
+zapytania. W tym celu zablokujemy działanie przycisku. Po rozwiązaniu obietnicy wyświe-
+tlimy liczbę zakupów danego użytkownika lub informację o błędzie.
+*/
+
+const userId = document.getElementById('user-id');
+const btn = document.getElementById('btn');
+const result = document.getElementById('result');
+
+btn.addEventListener('click', () => {
+    btn.disabled = true;
+    getUserOrders(userId.value)
+        .then(orders => result.textContent = `Liczba zakupów: ${orders.length}`)
+        .catch(errorMessage => result.textContent = errorMessage)
+        .finally(() => btn.disabled = false)
+})
+
+function getUserOrders(userId) {
+    return new Promise((resolve, reject) => {
+        if (userId === '123') {
+            const orders = [
+                {title: 'przedmiot 1'},
+                {title: 'przedmiot 2'}
+            ];
+            setTimeout(() => resolve(orders), 2000);
+        } 
+        else {
+            setTimeout(() => reject('Nie znaleziono takiego użytkownika.'), 1000);
+        }
+    });
+}
+
+/*
+Na początku pobieramy referencje do odpowiednich elementów drzewa DOM, po czym
+rejestrujemy obsługę zdarzenia kliknięcia przycisku. Po kliknięciu wywołana zostaje funkcja
+getUserOrders, która z kolei zwraca obietnicę rozwiązaną pozytywnie, gdy identyfikator
+użytkownika jest równy 123, oraz negatywnie z komunikatem błędu 'Nie znaleziono takiego
+użytkownika dla innych przypadków. Aby zasymulować rzeczywiste opóźnienie występujące
+przy zapytaniach do serwera, wywołania resolve oraz reject umieściliśmy wewnątrz funkcji
+setTimeout, co pozwoli nam również przetestować czasowe blokowanie przycisku.
+W przypadku pozytywnego rozwiązania obietnicy funkcja resolve przyjmuje jako parametr
+tablicę zawierającą obiekty reprezentujące zakupy użytkownika, którą możemy wykorzystać
+w metodzie then:
+.then(orders => result.textContent = `Liczba zakupów: ${orders.length}`)
+
+Nazwa parametru orders w metodzie then jest oczywiście umowna; może ona być praktycznie
+dowolna. W wielu poradnikach można spotkać zapis z użyciem ogólnej nazwy response:
+.then(response => result.textContent = `Liczba zakupów: ${response.length}`)
+Jest to oczywiście poprawne, choć warto zwracać również uwagę na czytelność kodu. Para-
+metr orders od razu sugeruje, że rozwiązaniem obietnicy jest jakaś lista zamówień, natomiast
+nazwa response mówi jedynie, że prawdopodobnie jest to jakaś wartość będąca odpowiedzią
+z serwera, lecz nie określa, co nią jest. 
+
+Tak naprawdę w tym momencie nie interesuje nas, z jakiego
+źródła pochodzą dane zapisane w orders; ta wiedza jest potrzebna tylko metodzie getUserOrders . 
+Dla nas istotne jest jedynie to, co znajduje się w tym parametrze, dlatego warto
+nadawać nazwy jasno wskazujące na zawartość obiektów.
+
+Zatrzymajmy się jeszcze na chwilę nad problemem blokowania przycisku. W powyższym
+przykładzie po zarejestrowaniu zdarzenia kliknięcia pierwszą operacją, jaką wykonujemy,
+jest ustawienie właściwości disabled przycisku na true:
+
+btn.disabled = true;
+
+Następnie obsługujemy odpowiednio pozytywne oraz negatywne rozwiązanie obietnicy, a na
+samym końcu w metodzie finally ponownie odblokowujemy przycisk:
+
+.finally(() => btn.disabled = false)
+
+Zalecam stosowanie właśnie takiej formy do ustawiania dostępności przycisków. Drugą
+formą jest jawne dodanie atrybutu disabled metodą setAttribute. Musimy jednak uważać,
+gdyż zapis btn.setAttribute('disabled', true);
+spowoduje dodanie takiego atrybutu i zablokowanie przycisku, natomiast jego zmiana na
+
+btn.setAttribute('disabled', false);
+
+nie skutkuje zdjęciem blokady. Dzieje się tak dlatego, że przycisk jest blokowany, kiedy posiada
+atrybut disabled , a nie gdy atrybut ten ma wartość true. Liczy się sam fakt przypisania do ele-
+mentu odpowiedniego atrybutu. Usunąć go możemy metodą removeAttribute:
+
+btn.removeAttribute('disabled');
+*/
