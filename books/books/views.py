@@ -22,7 +22,7 @@ class SearchResultsListView(ListView): # new
     # queryset = Book.objects.filter(title__icontains='pi')
 
     def get_queryset(self): # new
-        query = self.request.GET.get('q')
+        query = self.request.GET.get('q23')
         return Book.objects.filter(
             Q(title__icontains=query) | Q(author__icontains=query)
         )

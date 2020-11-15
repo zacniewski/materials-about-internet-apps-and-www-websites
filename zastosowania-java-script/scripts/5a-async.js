@@ -152,3 +152,18 @@ fetch('https://jsonplaceholder.typicode.com/users/1')
     .then(userData => console.log("Fetch example:", userData.name)) // "Leanne Graham"
 
 console.log(userData);
+
+function getUserOrders(userId) {
+    return new Promise((resolve, reject) => {
+        if (userId === '123') {
+            const orders = [
+                {title: 'przedmiot 1'},
+                {title: 'przedmiot 2'}
+            ];
+            setTimeout(() => resolve(orders), 2000);
+        } else {
+        setTimeout(() => reject('Nie znaleziono takiego użytkownika.'), 1000);
+        }
+    });
+}
+    

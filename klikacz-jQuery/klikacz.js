@@ -22,3 +22,9 @@ $(document).ready(function(){
 
 var table_dane = $('#dane').tableToJSON();
 console.log(table_dane);
+
+$.getJSON( "https://jsonplaceholder.typicode.com/users/10", function( data ) {
+  let name = data.name;
+  let id = data.id;
+  console.log( "User " + name + " has id=" + id);
+ });
