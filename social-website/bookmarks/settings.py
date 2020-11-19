@@ -42,11 +42,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # 3rd party
     'social_django',
     'django_extensions',
+    'easy_thumbnails',
 
+    # nasze
     'images.apps.ImagesConfig',
-
 ]
 
 MIDDLEWARE = [

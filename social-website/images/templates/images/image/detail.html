@@ -36,6 +36,18 @@
       {% endfor %}
     </div>
   {% endwith %}
+
+  <!-- script for closing messages-->
+    <script>
+        $(document).ready(function(){
+            window.setTimeout(function() {
+                $(".messages").fadeTo(500, 0).slideUp(500, function(){
+                    $(this).remove();
+                });
+            }, 3000);
+    });
+    </script>
+    
 {% endblock %}
 
 {% block domready %}
