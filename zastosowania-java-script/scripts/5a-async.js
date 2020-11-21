@@ -149,21 +149,67 @@ z serwera. Rozważmy najprostszy przypadek wykorzystania metody fetch z zapytani
 
 fetch('https://jsonplaceholder.typicode.com/users/1')
     .then(response => response.json())
-    .then(userData => console.log("Fetch example:", userData.name)) // "Leanne Graham"
+    .then(userData => console.log("Fetch example nr 1:", userData.name)) // "Leanne Graham"
 
-console.log(userData);
+// Ex. 1 - fetch
+let url_user_2 = 'https://jsonplaceholder.typicode.com/users/2';
 
-function getUserOrders(userId) {
-    return new Promise((resolve, reject) => {
-        if (userId === '123') {
-            const orders = [
-                {title: 'przedmiot 1'},
-                {title: 'przedmiot 2'}
-            ];
-            setTimeout(() => resolve(orders), 2000);
-        } else {
-        setTimeout(() => reject('Nie znaleziono takiego użytkownika.'), 1000);
-        }
-    });
+async function fetch_example_2(url) {
+    let response = await fetch(url);
+
+    if (response.ok) { // if HTTP-status is 200-299
+    console.log("Status = ", response.status);
+    // get the response body (the method explained below)
+    let json_obj = await response.json();
+    let city = json_obj.address.city;
+    console.log("City of user: ", city);
+    } 
+    else {
+        console.log("HTTP-Error: " + response.status);
+    }
 }
+
+fetch_example_2(url_user_2);
+
+// ex. 2 z "czystą" składnią obiektu Promise (API Githuba)
+let url_of_commits = 'https://api.github.com/repos/zacniewski/materials-about-internet-apps-and-www-websites/commits';
+
+fetch(url_of_commits)
+  .then(response => response.json())
+  .then(commits => console.log("Autor commitów: ", commits[0].author.login));
+
+
+// odpowiedź tekstowa zamiast JSON
+async function fetch_example_3(url) {
+    let response = await fetch(url);
+    let text = await response.text(); // read response body as text
+
+    console.log(text.slice(0, 80) + '...');
+}
+
+fetch_example_3(url_of_commits);
+
+// fetch i Blob
+let django_image_url = 'https://upload.wikimedia.org/wikipedia/commons/8/85/Django_Reinhardt_and_Duke_Ellington_%28Gottlieb%29.jpg';
+
+async function blob_example(image_url) {
+
+    let response = await fetch(image_url);
+    let blob = await response.blob(); // download as Blob object
     
+    // create <img> for it
+    let img = document.createElement('img');
+    img.style = 'position:fixed;top:10px;left:10px;width:200px';
+    document.body.append(img);
+
+    // show it
+    img.src = URL.createObjectURL(blob);
+
+    setTimeout(() => { // hide after five seconds
+        img.remove();
+        URL.revokeObjectURL(img.src);
+    }, 5000);
+}
+
+blob_example(django_image_url);
+
