@@ -211,5 +211,8 @@ async function blob_example(image_url) {
     }, 5000);
 }
 
-blob_example(django_image_url);
+document.getElementById("blob_example").addEventListener("click", function() 
+    { blob_example(django_image_url); } 
+    );
+
 
