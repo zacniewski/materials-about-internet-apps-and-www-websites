@@ -49,6 +49,9 @@ INSTALLED_APPS = [
     'rest_auth', 
     'rest_auth.registration',
 
+    # Swagger
+    'drf_yasg',
+
     # Local
     'posts.apps.PostsConfig',
 ]
