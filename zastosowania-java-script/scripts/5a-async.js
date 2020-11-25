@@ -238,4 +238,10 @@ document.getElementById("callback_example").addEventListener("click", function()
         }); } 
     );
 
-
+// fetch do pobierania danych
+fetch("https://restcountries.eu/rest/v2/name/Poland")
+    .then(response => response.json())
+    .then(response => {
+        let nazwa = response[0].name;
+        console.log("Nazwa kraju: ",nazwa);
+    })
