@@ -215,4 +215,27 @@ document.getElementById("blob_example").addEventListener("click", function()
     { blob_example(django_image_url); } 
     );
 
+// Callback example
+function sumTable(tab, fn) {
+    let sum = 0;
+    for (let i=0; i<tab.length; i++) {
+        sum += tab[i];
+    }
+    fn(sum);
+}
+
+/*
+// wynik w konsoli
+sumTable([1,2,3,4], function(res) {
+    console.log("Suma liczb w tablicy to: " + res);
+});
+*/
+
+// wynik w konsoli po kliknięciu w guzik
+document.getElementById("callback_example").addEventListener("click", function() 
+    { sumTable([1,2,3,4], function(res) {
+        console.log("Suma liczb w tablicy to: " + res);
+        }); } 
+    );
+
 
