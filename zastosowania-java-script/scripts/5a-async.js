@@ -245,3 +245,19 @@ fetch("https://restcountries.eu/rest/v2/name/Poland")
         let nazwa = response[0].name;
         console.log("Nazwa kraju: ",nazwa);
     })
+
+// AJAX
+let url_user_4 = 'https://jsonplaceholder.typicode.com/users/4';
+
+let xhr = new XMLHttpRequest();
+
+xhr.open('GET', url_user_4);
+
+xhr.responseType = 'json';
+
+xhr.send();
+
+xhr.onload = function() {
+  let responseObj = xhr.response;
+  console.log("AJAX example - user name: ", responseObj.name); // "Patricia Lebsack"
+};
