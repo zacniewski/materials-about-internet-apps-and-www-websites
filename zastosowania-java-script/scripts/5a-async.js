@@ -176,7 +176,8 @@ let url_of_commits = 'https://api.github.com/repos/zacniewski/materials-about-in
 
 fetch(url_of_commits)
   .then(response => response.json())
-  .then(commits => console.log("Autor commitów: ", commits[0].author.login));
+  //.then(commits => console.log("Commits: ", commits[0]));
+ .then(commits => console.log("Autor commitów: ", commits[0].author.login));
 
 
 // odpowiedź tekstowa zamiast JSON
@@ -184,7 +185,7 @@ async function fetch_example_3(url) {
     let response = await fetch(url);
     let text = await response.text(); // read response body as text
 
-    console.log(text.slice(0, 80) + '...');
+    console.log(text.slice(0, 100) + '...');
 }
 
 fetch_example_3(url_of_commits);
@@ -235,29 +236,73 @@ sumTable([1,2,3,4], function(res) {
 document.getElementById("callback_example").addEventListener("click", function() 
     { sumTable([1,2,3,4], function(res) {
         console.log("Suma liczb w tablicy to: " + res);
-        }); } 
+        document.getElementById("callback_paragraph").innerHTML = "Suma liczb: " + res;
+        }); 
+    } 
     );
 
-// fetch do pobierania danych
+// "czysty" fetch do pobierania danych
 fetch("https://restcountries.eu/rest/v2/name/Poland")
     .then(response => response.json())
     .then(response => {
+        console.log("Polska z fetch: ", response);
         let nazwa = response[0].name;
-        console.log("Nazwa kraju: ",nazwa);
+        let region = response[0].region;
+        let lat = response[0].latlng[0];
+        let result = `${nazwa} is in ${region} and has latitude equal to ${lat}.`
+        console.log("Info about country: ", result);
     })
 
 // AJAX
 let url_user_4 = 'https://jsonplaceholder.typicode.com/users/4';
-
 let xhr = new XMLHttpRequest();
 
 xhr.open('GET', url_user_4);
 
 xhr.responseType = 'json';
-
 xhr.send();
 
 xhr.onload = function() {
   let responseObj = xhr.response;
-  console.log("AJAX example - user name: ", responseObj.name); // "Patricia Lebsack"
+  let name = responseObj.name;
+  console.log("AJAX example - user name: ", name); // "Patricia Lebsack"
 };
+
+// callback - funkcja anonimowa 
+function printText(el) {
+    console.log("printText:", el);
+}
+
+[1,2,3,4].forEach(printText);
+
+
+// axios
+
+// Make a request for a user with a given ID
+axios.get(url_user_2)
+  .then(function (response) {
+    // handle success
+    let username = response.data.name;
+    let phone = response.data.phone;
+    console.log(`axios user ${username} has phone number ${phone}.` );
+  })
+  .catch(function (error) {
+    // handle error
+    console.log("axios user 2: ", error);
+  })
+  .then(function () {
+    // always executed
+  });
+
+// Want to use async/await? Add the `async` keyword to your outer function/method.
+async function getUser() {
+    try {
+      const response = await axios.get(url_user_4);
+      let user_name_4 = response.data.name;
+      console.log("axios user 4: ", user_name_4);
+    } catch (error) {
+      console.error("axios user 4: ",error);
+    }
+  }
+
+  getUser();

@@ -153,7 +153,7 @@ do przedstawionego powyżej. Aby móc obsłużyć oba przypadki, musimy więc za
 zarówno metodę then, jak i catch:
 */
 
-getArticle('123')
+getArticle('1234')
     .then(data => console.log("example 2:",data))
     .catch(error => console.log("example 2:",error))
 
