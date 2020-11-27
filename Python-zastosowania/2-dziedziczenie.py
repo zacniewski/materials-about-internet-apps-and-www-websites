@@ -20,7 +20,7 @@ print("dog1 jest klasy: ", type(dog1))
 """
 Można też skorzystać z funkcji isinstance()
 """
-print("Czy dog2 jest klasy Dog? ",isinstance(dog2, Dog))
+print("Czy dog2 jest klasy Dog? ", isinstance(dog2, Dog))
 
 """
 Ponieważ różne rasy psów wydają nieco inne odgłosy, 
@@ -48,8 +48,9 @@ class Dog2:
 
 # Klasa dziedzicząca po klasie Dog2
 class JackRussellTerrier(Dog2):
-    def speak(self, sound="Arrrr"): # parametr opcjonalny
+    def speak(self, sound="Arrrr"):  # parametr opcjonalny
         return f"{self.name} szczeka głośno {sound}"
+
 
 jtr = JackRussellTerrier("Marian", 7)
 print(jtr.speak())
@@ -67,9 +68,12 @@ używając tych samych argumentów, które przekazałeś do JackRussellTerrier.s
 Możesz uzyskać dostęp do klasy nadrzędnej z wnętrza metody klasy potomnej za pomocą super ():
 """
 
+
 class JackRussellTerrier2(Dog2):
     def speak(self, sound="Arffff"):
-        return super().speak(sound) # zamiast modyfikacji w tym miejscu wywołujemy speak() z klasy nadrzędnej poprzez super()
+        return super().speak(
+            sound
+        )  # zamiast modyfikacji w tym miejscu wywołujemy speak() z klasy nadrzędnej poprzez super()
 
 
 jtr2 = JackRussellTerrier2("Piesiu", 5)

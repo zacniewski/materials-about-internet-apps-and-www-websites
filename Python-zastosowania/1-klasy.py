@@ -3,7 +3,8 @@ class Dog:
         self.name = name  # atrybut 'name'(po lewej) ma przypisaną wartość 'parametru 'name' (tę z prawej)
         self.age = age
 
-# utworzenie obiektu klasy Dog        
+
+# utworzenie obiektu klasy Dog
 dog1 = Dog("Burek", 4)
 print(f"{dog1.name} ma {dog1.age} lata")
 
@@ -24,7 +25,8 @@ Możesz zdefiniować atrybut klasy, przypisując wartość do nazwy zmiennej poz
 Na przykład następująca klasa Dog ma atrybut klasy o nazwie gatunki z wartością „Canis familiaris:
 """
 
-class Dog2: 
+
+class Dog2:
     # atrybut klasy
     species = "Canis familiaris"
 
@@ -33,7 +35,7 @@ class Dog2:
         self.age = age
 
 
-# utworzenie obiektu klasy Dog2        
+# utworzenie obiektu klasy Dog2
 dog2 = Dog2("Reks", 3)
 dog2a = Dog2("Duży Reks", 32)
 
@@ -59,6 +61,7 @@ Metody instancji to funkcje zdefiniowane wewnątrz klasy i mogą być wywoływan
 Podobnie jak .__ init __ (), pierwszym parametrem metody instancji jest zawsze self.
 """
 
+
 class Dog3:
     species = "Canis familiaris"
 
@@ -75,7 +78,7 @@ class Dog3:
         return f"{self.name} szczeka {sound}"
 
 
-# utworzenie obiektu klasy Dog3        
+# utworzenie obiektu klasy Dog3
 dog3 = Dog3("Reksio", 2)
 print(dog3.description())
 print(dog3.speak("Hau, hau"))
@@ -84,6 +87,7 @@ print(dog3.speak("Hau, hau"))
 Żeby uprościć drukowanie informacji o obiektach można zdefiniować specjalną metode instancji, czyli __str__()
 Należy jej użyć zamiast metody description()
 """
+
 
 class Dog4:
     species = "Canis familiaris"

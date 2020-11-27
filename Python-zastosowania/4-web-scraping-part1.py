@@ -4,7 +4,17 @@ from bs4 import BeautifulSoup
 
 odpowiedz = requests.get("https://pl.wikipedia.org/wiki/Zygmunt_III_Waza")
 print("odpowiedź = \n", odpowiedz)
-print("odpowiedź tekstowa = \n", odpowiedz.text)
+print(odpowiedz.status_code)
+html_text: str = odpowiedz.text
+# print("Strona o Wazie = \n", html_text)
+
+user1 = requests.get("https://jsonplaceholder.typicode.com/users/1")
+json_text: dict = user1.json()
+print("url = ", user1.url)
+print("json_text = ", json_text)
+print("history = ", user1.history)
+
+# print("odpowiedź tekstowa = \n", html_text)
 
 html_doc = """<html>
 <head>
@@ -32,7 +42,23 @@ html_doc = """<html>
 </body>
 </html>"""
 
-soup = BeautifulSoup(html_doc, "html.parser")
+url_amw = "https://www.amw.gdynia.pl/"
+# page = requests.get(url_amw)
+# soup = BeautifulSoup(page.content, "html.parser")
+soup = BeautifulSoup(html_doc, "lxml")
+
+# Extract head of page
+page_head = soup.head
+print("Typ = ", type(page_head))
+
+first_p = soup.select("p")[0].text
+print("First p =\n", first_p)
+
+another_p = soup.select("p")[1].text
+print("Another p =\n", another_p)
+
+print("Liczba zanaczników 'p' = ", len(soup.select("p")))
+
 
 # title
 print("TITLE")
@@ -62,12 +88,15 @@ print("\n")
 print("FIND")
 print(soup.find_all("p"))
 print(soup.find(border="3"))
-print(soup.find(class_="tabela"))
+print("Find klasy = ", soup.find(class_="tabela"))
+print("Select klasy = ", len(soup.select("table.tabela")))
 print(soup.find(href=True))
+# print("Find src = \n", soup.find(src=False)) # be careful!
+
 print("\n")
 
 # next
 print("NEXT")
-print(soup.tr.next_element)
+print(soup.th.next_element)
 print(soup.tr.next_sibling)
 print(soup.tr.next_sibling.next_sibling)
