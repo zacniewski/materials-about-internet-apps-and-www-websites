@@ -1,12 +1,14 @@
 import React from "react";
 
+import "./Countdown.css"
+
 import PropTypes from "prop-types";
 
 // 'props' jako argument funkcji
 const Countdown = props => (
-    <div className="countdown">
-          <b>{props.name}</b> - {props.time}
-    </div>
+  <div className="countdown">
+    <strong>{props.name}</strong> - {props.time}
+  </div>
 );
 
 // warningi widoczne w konsoli przeglądarki
