@@ -36,9 +36,9 @@
     - własny komponent Hello (plik Hello.jsx) w gałęzi [01](https://github.com/zacniewski/materials-about-internet-apps-and-www-websites/tree/cra/01-HelloWorld/React-pierwsze-kroki) i sprawdzenie poprawności działania (```npm start```),
   6. upraszczanie projektu, czyli usunięcie zbędnych plików (gałąź [02](https://github.com/zacniewski/materials-about-internet-apps-and-www-websites/tree/cra/02-czyszczenie-projektu/React-pierwsze-kroki))
 
-  7. Komponent Countdown
+  7. startowy komponent aplikacji
     - zwracamy tylko jeden element HTML! (sprawdzić co będzie, gdy zwracamy wiecej)
     - 'App' jako konwencja nazewnicza (zamiast 'Hello')
     - class vs className w przypadku atrybutów, czyli [różnice](https://pl.reactjs.org/docs/dom-elements.html) w atrybutach HTML i React DOM,
-    
+  8. zagnieżdżanie komponentów
 
