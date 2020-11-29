@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import './App.css';
+import './App.css'; // CSS dla komponentu App
 
 function App() {
   return (

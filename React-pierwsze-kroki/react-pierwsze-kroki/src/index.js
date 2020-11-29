@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import './index.css'; // importujemy "główny" plik CSS
+import App from './App'; // import komponentu App z pliku App.js
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
