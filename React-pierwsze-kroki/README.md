@@ -20,5 +20,8 @@
    * tworzenia aplikacja za pomocą create-react-app
   ![apka](images/tworzenie_apki.png)  
   * struktura projektu
+    ![struktura](images/struktura.png)
     - index.js jako plik "wejściowy" (import modułów i komponentów)
-  ![struktura](images/struktura.png)
+    - App.js zawiera komponent ```App``` i importuje CSSy z pliku ```App.css```  i może zawierać importy niezbędnych mu modułów i plików,
+    - osobne plik .js i .css do komponentów,
+    
