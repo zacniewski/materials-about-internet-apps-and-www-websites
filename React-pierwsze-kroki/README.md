@@ -69,4 +69,11 @@
     - używamy funkcji [map()](https://www.w3schools.com/jsref/jsref_map.asp) do iteracji po wszystkich elementach struktury danych w state, tym samym możemy wygenerować odpowiednią liczbę komponentów,
     - możemy otrzymać ostrzeżenie w konsoli:  
     ![key warning](images/key-warning.png)  
-    - 
+    - wirtualny DOM renderuje tylko zmiany, które powstały w czasie działania aplikacji,
+    - każdy komponent musi mieć unikalne 'id', stąd ww. warning i konieczność dopisania właściwości 'key'.
+
+  12. React Dev Tools
+    - rozszerzenie do przeglądarki,
+    - w konsoli mamy nowe zakładki: "Components" i "Profiler".
+
+  13. CSS
