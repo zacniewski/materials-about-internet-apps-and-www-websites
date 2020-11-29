@@ -9,6 +9,7 @@ const Countdown = props => (
     </div>
 );
 
+// warningi widoczne w konsoli przeglądarki
 Countdown.propTypes = {
     name: PropTypes.number,
     time: PropTypes.string
