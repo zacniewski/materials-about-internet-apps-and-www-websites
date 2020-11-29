@@ -17,5 +17,5 @@
   * instalacja pakietu create-react-app
   ![quickstart](images/instalacja_cra.png)  
    * tworzenia aplikacja za pomocą create-react-app
-  ![quickstart](images/quickstart.png)  
+  ![quickstart](images/tworzenie_apki.png)  
   * next
