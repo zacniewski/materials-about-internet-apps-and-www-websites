@@ -18,23 +18,29 @@
 ### Zagadnienia
   1. instalacja pakietu create-react-app
   ![cra](images/instalacja_cra.png)  
+
   2. tworzenie aplikacji za pomocą create-react-app
   ![apka](images/tworzenie_apki.png)  
-    * celem aplikacji będzie wyświetlanie najważniejszych wydarzeń dotyczących naszego dnia (pracy, nauki, itp.),
+    * celem aplikacji będzie wyświetlanie najważniejszych wydarzeń dotyczących naszego dnia (pracy, nauki, itp.).
+
   3. struktura projektu
     ![struktura](images/struktura.png)
     - index.js jako plik "wejściowy" (import modułów i komponentów)
     - App.js zawiera komponent ```App``` i importuje CSSy z pliku ```App.css```  i może zawierać importy niezbędnych mu modułów i plików,
     - osobne plik .js i .css do komponentów.
+
   4. [JSX](https://reactjs.org/docs/introducing-jsx.html) - kod HTML wewnątrz JavaScript
     - przykład:  
   ![jsx1](images/jsx1.png)
     - użycie fukcji i obiektów JS przed tworzeniem komponentów  
   ![jsx2](images/jsx2.png)
     - błąd w składni natychmiast jest wyświetlany zarówno w konsoli jak i w przeglądarce
+
   5. komponenty w React.js
     - komponenty funkcyjne i komponenty klasowe: [prykład z dokumentacji](https://reactjs.org/docs/components-and-props.html),
-    - własny komponent Hello (plik Hello.jsx) w gałęzi [01](https://github.com/zacniewski/materials-about-internet-apps-and-www-websites/tree/cra/01-HelloWorld/React-pierwsze-kroki) i sprawdzenie poprawności działania (```npm start```),
+    ![komponenty](images/components.png)
+    - własny komponent Hello (plik Hello.jsx) w gałęzi [01](https://github.com/zacniewski/materials-about-internet-apps-and-www-websites/tree/cra/01-HelloWorld/React-pierwsze-kroki) i sprawdzenie poprawności działania (```npm start```).
+
   6. upraszczanie projektu, czyli usunięcie zbędnych plików (gałąź [02](https://github.com/zacniewski/materials-about-internet-apps-and-www-websites/tree/cra/02-czyszczenie-projektu/React-pierwsze-kroki))
 
   7. Komponent Countdown
@@ -57,4 +63,5 @@
   11. State (stan)
     - komponent potrzebuje własnego stanu (state), gdy powiązane z nim dane zmieniają się w czasie. Na przykład, komponent Checkbox w zmiennej isChecked mógłby śledzić, czy jest zaznaczony, a komponent NewsFeed mógłby przechowywać pobrane posty w fetchedPosts,
     - najistotniejszą różnicą pomiędzy state i props jest to, że właściwości props są dostarczane przez komponent nadrzędny, a stanem state zarządza sam komponent. Komponent nie może modyfikować swoich właściwości props, ale może zmieniać swój stan state,
-    - zamiast funkcji musimy użyć klasy
+    - zamiast funkcji musimy użyć klasy dziedziczącej z klasy Component;
+    - w state zapisujemy te elementy, które będą się zmieniać w czasie "pracy" aplikacji, w naszym przypadku możemy utworzyć odpowiednie struktury danych,
