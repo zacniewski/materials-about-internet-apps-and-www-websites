@@ -43,6 +43,7 @@
 
   8. zagnieżdżanie komponentów
     - nowy plik Countdown.jsx z komponentem + import w pliku App.js
+    - nowy plik Countdown2.jsx z komponentem + import w pliku App.js
 
     
 
