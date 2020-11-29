@@ -37,7 +37,7 @@
     - błąd w składni natychmiast jest wyświetlany zarówno w konsoli jak i w przeglądarce
 
   5. komponenty w React.js
-    - komponenty funkcyjne i komponenty klasowe: [prykład z dokumentacji](https://reactjs.org/docs/components-and-props.html),
+    - komponenty funkcyjne i komponenty klasowe: [przykład z dokumentacji](https://reactjs.org/docs/components-and-props.html),  
     ![komponenty](images/components.png)
     - własny komponent Hello (plik Hello.jsx) w gałęzi [01](https://github.com/zacniewski/materials-about-internet-apps-and-www-websites/tree/cra/01-HelloWorld/React-pierwsze-kroki) i sprawdzenie poprawności działania (```npm start```).
 
