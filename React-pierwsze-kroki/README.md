@@ -15,9 +15,9 @@
   * co nowego w [ES6](https://www.w3schools.com/js/js_es6.asp).
 
 ### Zagadnienia
-  * instalacja pakietu create-react-app
+  1. instalacja pakietu create-react-app
   ![cra](images/instalacja_cra.png)  
-   * tworzenia aplikacja za pomocą create-react-app
+  2. tworzenia aplikacja za pomocą create-react-app
   ![apka](images/tworzenie_apki.png)  
   * struktura projektu
     ![struktura](images/struktura.png)
