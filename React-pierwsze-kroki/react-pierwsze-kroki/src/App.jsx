@@ -16,7 +16,7 @@ class App extends Component {
   }
   render() {
     const my_events = this.state.events.map(el => {
-      return <Countdown name={el.name} time={el.time} />
+      return <Countdown key={el.id} name={el.name} time={el.time} />
     })
     return (
       <div> {my_events} </div>
