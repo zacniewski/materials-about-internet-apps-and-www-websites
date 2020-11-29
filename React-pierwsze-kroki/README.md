@@ -38,13 +38,14 @@
 
   7. Komponent Countdown
     - zwracamy tylko jeden element HTML! (sprawdzić co będzie, gdy zwracamy wiecej)
-    - 'App' jako konwencja nazewnicza (zamiast 'Hello')
+    - 'App' jako konwencja nazewnicza (zamiast 'Hello') w gałęzi [03](https://github.com/zacniewski/materials-about-internet-apps-and-www-websites/tree/cra/03-komponenty-i-props/React-pierwsze-kroki/react-pierwsze-kroki/src),
     - class vs className w przypadku atrybutów, czyli [różnice](https://pl.reactjs.org/docs/dom-elements.html) w atrybutach HTML i React DOM,
 
-  8. zagnieżdżanie komponentów
+  8. zagnieżdżanie komponentów (gałąź nr [04](https://github.com/zacniewski/materials-about-internet-apps-and-www-websites/tree/cra/04-zagniezdzanie-komponentow/React-pierwsze-kroki/react-pierwsze-kroki/src))
     - nowy plik Countdown.jsx z komponentem + import w pliku App.js
     - nowy plik Countdown2.jsx z komponentem + import w pliku App.js
     - teraz komponenty wyświetlają statyczną informację, jak to zmienić?
 
+  9. Props (właściwości, w gałęzi nr [05]())
     
 
