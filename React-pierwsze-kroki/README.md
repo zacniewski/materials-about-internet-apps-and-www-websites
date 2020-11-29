@@ -65,3 +65,8 @@
     - najistotniejszą różnicą pomiędzy state i props jest to, że właściwości props są dostarczane przez komponent nadrzędny, a stanem state zarządza sam komponent. Komponent nie może modyfikować swoich właściwości props, ale może zmieniać swój stan state,
     - zamiast funkcji musimy użyć klasy dziedziczącej z klasy Component;
     - w state zapisujemy te elementy, które będą się zmieniać w czasie "pracy" aplikacji, w naszym przypadku możemy utworzyć odpowiednie struktury danych,
+    - tworzymy konstruktor i wywołujemy metodę super(), w celu udostępniania i korzystania z funkcji klasy po której nasz obiekt dziedziczy,
+    - używamy funkcji map() do iteracji po wszystkich elementach struktury danych w state, tym samym możemy wygenerować odpowiednią liczbę komponentów,
+    - możemy otrzymać ostrzeżenie w konsoli:  
+    ![key warning](images/key-warning.png)  
+    - 

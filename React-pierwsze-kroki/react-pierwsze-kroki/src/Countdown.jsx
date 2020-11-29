@@ -11,7 +11,7 @@ const Countdown = props => (
 
 // warningi widoczne w konsoli przeglądarki
 Countdown.propTypes = {
-    name: PropTypes.number,
+    name: PropTypes.string,
     time: PropTypes.string
   };
 export default Countdown;

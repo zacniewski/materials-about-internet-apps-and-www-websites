@@ -14,11 +14,11 @@ class App extends Component {
     };
   }
   render() {
+    const my_events = this.state.events.map(el => {
+      return <Countdown name={el.name} time={el.time} />
+    })
     return (
-      <div>
-        <Countdown name ="śniadanie" time="7:00" />
-        <Countdown name ="obiad" time="15:00" />
-      </div>
+      <div> {my_events} </div>
     );
   }
 }
