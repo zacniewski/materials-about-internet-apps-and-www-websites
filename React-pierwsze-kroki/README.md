@@ -14,5 +14,6 @@
   * praca z narzędziem [create-react-app](https://create-react-app.dev/docs/getting-started)
 
 ### Zagadnienia
-  * instalacja
-  * ![quickstart](images/quickstart.png)
+  * instalacja  
+  ![quickstart](images/quickstart.png)  
+  * next
