@@ -27,7 +27,12 @@
   * JSX - kod HTML wewnątrz JavaScript
     - przykład:  
   ![jsx1](images/jsx1.png)
-    - tworzenie komponentów  
+    - użycie fukcji i obiektów JS przy tworzenie komponentów  
   ![jsx2](images/jsx2.png)
-
+    - błąd w składni natychmiast jest wyświetlany zarówno w konsoli jak i w przeglądarce
+    - [różnice](https://pl.reactjs.org/docs/dom-elements.html) w atrybutach HTML i React DOM
+  * komponent w React.js
+    - komponenty funkcyjne,
+    - komponenty klasowe,
+    - 
 
