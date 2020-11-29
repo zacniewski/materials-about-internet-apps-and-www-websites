@@ -9,6 +9,7 @@ const App = () => (
             <b>obiad</b> - "15:00"
         </div>
   </div>
-);
+  // sprawdzić drugiego diva!
+  );
 
 export default App;
