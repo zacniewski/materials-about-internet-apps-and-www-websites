@@ -40,5 +40,9 @@
     - zwracamy tylko jeden element HTML! (sprawdzić co będzie, gdy zwracamy wiecej)
     - 'App' jako konwencja nazewnicza (zamiast 'Hello')
     - class vs className w przypadku atrybutów, czyli [różnice](https://pl.reactjs.org/docs/dom-elements.html) w atrybutach HTML i React DOM,
+
+  8. zagnieżdżanie komponentów
+    - nowy plik Countdown.jsx z komponentem + import w pliku App.js
+
     
 
