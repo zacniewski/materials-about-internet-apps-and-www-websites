@@ -11,11 +11,13 @@
 
 ### Dokumentacja
   * główne [koncepcje](https://reactjs.org/docs/hello-world.html) w React.js,
-  * praca z narzędziem [create-react-app](https://create-react-app.dev/docs/getting-started)
+  * praca z narzędziem [create-react-app](https://create-react-app.dev/docs/getting-started),
+  * co nowego w [ES6](https://www.w3schools.com/js/js_es6.asp).
 
 ### Zagadnienia
   * instalacja pakietu create-react-app
   ![quickstart](images/instalacja_cra.png)  
    * tworzenia aplikacja za pomocą create-react-app
   ![quickstart](images/tworzenie_apki.png)  
-  * next
+  * struktura projektu
+    - index.js jako plik "wejściowy" (import modułów i komponentów)
