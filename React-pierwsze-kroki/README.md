@@ -19,6 +19,7 @@
   ![cra](images/instalacja_cra.png)  
   2. tworzenie aplikacji za pomocą create-react-app
   ![apka](images/tworzenie_apki.png)  
+    * celem aplikacji będzie wyświetlanie najważniejszych wydarzeń dotyczących naszego dnia (pracy, nauki, itp.),
   3. struktura projektu
     ![struktura](images/struktura.png)
     - index.js jako plik "wejściowy" (import modułów i komponentów)
@@ -27,14 +28,14 @@
   4. [JSX](https://reactjs.org/docs/introducing-jsx.html) - kod HTML wewnątrz JavaScript
     - przykład:  
   ![jsx1](images/jsx1.png)
-    - użycie fukcji i obiektów JS przy tworzenie komponentów  
+    - użycie fukcji i obiektów JS przed tworzeniem komponentów  
   ![jsx2](images/jsx2.png)
     - błąd w składni natychmiast jest wyświetlany zarówno w konsoli jak i w przeglądarce
     - [różnice](https://pl.reactjs.org/docs/dom-elements.html) w atrybutach HTML i React DOM
   5. komponenty w React.js
-    - komponenty funkcyjne,
-    - komponenty klasowe,
+    - komponenty funkcyjne i komponenty klasowe: [prykład z dokumentacji](https://reactjs.org/docs/components-and-props.html),
     - własny komponent Hello (plik Hello.jsx) w gałęzi [01](https://github.com/zacniewski/materials-about-internet-apps-and-www-websites/tree/cra/01-HelloWorld/React-pierwsze-kroki) i sprawdzenie poprawności działania (```npm start```),
   6. upraszczanie projektu, czyli usunięcie zbędnych plików (gałąź [02](https://github.com/zacniewski/materials-about-internet-apps-and-www-websites/tree/cra/02-czyszczenie-projektu/React-pierwsze-kroki))
 
-
+  7. Komponent Countdown
+    - zwracamy tylko jeden element HTML! (sprawdzić co będzie, gdy zwracamy wiecej)
