@@ -1,13 +1,12 @@
 import React from "react";
 
 import Countdown from './Countdown' 
-import Countdown2 from './Countdown2' 
 
 
 const App = () => (
   <div>
-      <Countdown />
-      <Countdown2 />
+      <Countdown name ="śniadanie" time="7.00" />
+      <Countdown name ="obiad" time="15.00" />
   </div>
   // sprawdzić drugiego diva!
   );

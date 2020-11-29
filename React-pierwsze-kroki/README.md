@@ -12,7 +12,8 @@
 ### Dokumentacja
   * główne [koncepcje](https://reactjs.org/docs/hello-world.html) w React.js,
   * praca z narzędziem [create-react-app](https://create-react-app.dev/docs/getting-started),
-  * co nowego w [ES6](https://www.w3schools.com/js/js_es6.asp).
+  * co nowego w [ES6](https://www.w3schools.com/js/js_es6.asp),
+  * podstawowe [pojęcia](https://pl.reactjs.org/docs/glossary.html) w React.
 
 ### Zagadnienia
   1. instalacja pakietu create-react-app
@@ -46,6 +47,8 @@
     - nowy plik Countdown2.jsx z komponentem + import w pliku App.js
     - teraz komponenty wyświetlają statyczną informację, jak to zmienić?
 
-  9. Props (właściwości, w gałęzi nr [05]())
+  9. Props (właściwości, w gałęzi nr [05](https://github.com/zacniewski/materials-about-internet-apps-and-www-websites/tree/cra/05-props/React-pierwsze-kroki/react-pierwsze-kroki/src))
+    - props (od ang. properties = pol. właściwości) są danymi wejściowymi dla reactowych komponentów. Przekazuje się je z komponentów nadrzędnych do ich potomków. Właściwości props są tylko do odczytu. Nie należy ich w jakikolwiek sposób modyfikować,
+    - 
     
 
