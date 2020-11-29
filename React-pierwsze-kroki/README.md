@@ -52,7 +52,7 @@
   
   10. PropTypes - gwarancja odpowiedniego typu danych w gałęzi nr [06](https://github.com/zacniewski/materials-about-internet-apps-and-www-websites/tree/cra/06-proptypes/React-pierwsze-kroki)
     - dla niewłaściwego typu otrzymujemy ostrzeżenie:  
-  ![proptype](images/proptype-warning.png)
+  ![proptype](images/proptypes-warning.png)
 
   11. State (stan)
     - komponent potrzebuje własnego stanu (state), gdy powiązane z nim dane zmieniają się w czasie. Na przykład, komponent Checkbox w zmiennej isChecked mógłby śledzić, czy jest zaznaczony, a komponent NewsFeed mógłby przechowywać pobrane posty w fetchedPosts,
