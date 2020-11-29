@@ -24,7 +24,7 @@
     - index.js jako plik "wejściowy" (import modułów i komponentów)
     - App.js zawiera komponent ```App``` i importuje CSSy z pliku ```App.css```  i może zawierać importy niezbędnych mu modułów i plików,
     - osobne plik .js i .css do komponentów.
-  * JSX - kod HTML wewnątrz JavaScript
+  * [JSX](https://reactjs.org/docs/introducing-jsx.html) - kod HTML wewnątrz JavaScript
     - przykład:  
   ![jsx1](images/jsx1.png)
     - użycie fukcji i obiektów JS przy tworzenie komponentów  
