@@ -60,12 +60,14 @@
     - dla niewłaściwego typu otrzymujemy ostrzeżenie:  
   ![proptype](images/proptypes-warning.png)
 
-  11. State (stan)
+  11. State (stan) w gałęzi [07](https://github.com/zacniewski/materials-about-internet-apps-and-www-websites/tree/cra/07-state/React-pierwsze-kroki)
     - komponent potrzebuje własnego stanu (state), gdy powiązane z nim dane zmieniają się w czasie. Na przykład, komponent Checkbox w zmiennej isChecked mógłby śledzić, czy jest zaznaczony, a komponent NewsFeed mógłby przechowywać pobrane posty w fetchedPosts,
     - najistotniejszą różnicą pomiędzy state i props jest to, że właściwości props są dostarczane przez komponent nadrzędny, a stanem state zarządza sam komponent. Komponent nie może modyfikować swoich właściwości props, ale może zmieniać swój stan state,
     - zamiast funkcji musimy użyć klasy dziedziczącej z klasy Component;
     - w state zapisujemy te elementy, które będą się zmieniać w czasie "pracy" aplikacji, w naszym przypadku możemy utworzyć odpowiednie struktury danych,
-    - tworzymy konstruktor i wywołujemy metodę super(), w celu udostępniania i korzystania z funkcji klasy po której nasz obiekt dziedziczy,
+    - tworzymy konstruktor i wywołujemy metodę super(), w celu udostępniania i korzystania z funkcji klasy po której nasz obiekt dziedziczy.
+
+  12. Generowanie komponentów w gałęzi [08](https://github.com/zacniewski/materials-about-internet-apps-and-www-websites/tree/cra/08-generowanie-komponentow/React-pierwsze-kroki)
     - używamy funkcji [map()](https://www.w3schools.com/jsref/jsref_map.asp) do iteracji po wszystkich elementach struktury danych w state, tym samym możemy wygenerować odpowiednią liczbę komponentów,
     - możemy otrzymać ostrzeżenie w konsoli:  
     ![key warning](images/key-warning.png)  
@@ -77,3 +79,6 @@
     - w konsoli mamy nowe zakładki: "Components" i "Profiler".
 
   13. CSS
+    - CSS dla komponentów i CSS główny w gałęzi [09](https://github.com/zacniewski/materials-about-internet-apps-and-www-websites/tree/cra/09-css/React-pierwsze-kroki)
+
+  14. Komponent edycji wydarzenia w gałęzi [10]
