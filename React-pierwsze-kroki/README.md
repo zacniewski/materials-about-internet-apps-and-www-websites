@@ -6,7 +6,7 @@
 
 ### Porady i informacje
   * do pliku .gitignore dobrze jest dodać linię ```node_modules/```, żeby nie wysyłacć na repo niepotrzebnych plików o sporej wadze,
-  * w gałęzi [main] naszego repozytorium znajduje się wersja końcowa aplikacji, poszczególne etapy budowy aplikacji znajdują się w gałęziach postaci ```cra/numer_zagadnienia - nazwa_zagadnienia```
+  * w gałęzi [main] naszego repozytorium znajduje się wersja końcowa aplikacji, poszczególne etapy budowy aplikacji znajdują się w gałęziach postaci ```cra/numer_zagadnienia - nazwa_zagadnienia```, np. [tutaj](https://github.com/zacniewski/materials-about-internet-apps-and-www-websites/tree/cra/01-HelloWorld/React-pierwsze-kroki)
 
 
 ### Dokumentacja
@@ -34,5 +34,6 @@
   * komponent w React.js
     - komponenty funkcyjne,
     - komponenty klasowe,
-    - 
+    - własny komponent Hello (plik Hello.jsx) i sprawdzenie poprawności działania,
+
 

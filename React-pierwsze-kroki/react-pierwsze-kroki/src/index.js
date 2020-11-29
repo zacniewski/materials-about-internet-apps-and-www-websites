@@ -2,11 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css'; // importujemy "główny" plik CSS
 import App from './App'; // import komponentu App z pliku App.js
+import Hello from './Hello' // nasz komponent Hello
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Hello />
   </React.StrictMode>,
   document.getElementById('root')
 );
