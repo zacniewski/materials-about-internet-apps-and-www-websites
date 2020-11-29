@@ -1,5 +1,6 @@
-
 import React from "react";
+
+import PropTypes from "prop-types"
 
 // 'props' jako argument funkcji
 const Countdown = (props) => (
@@ -8,4 +9,8 @@ const Countdown = (props) => (
     </div>
 );
 
+Countdown.propTypes = {
+    name: PropTypes.string,
+    time: PropTypes.string
+  };
 export default Countdown;
