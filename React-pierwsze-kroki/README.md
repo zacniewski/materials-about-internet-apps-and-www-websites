@@ -51,5 +51,9 @@
     - props (od ang. properties = pol. właściwości) są danymi wejściowymi dla reactowych komponentów. Przekazuje się je z komponentów nadrzędnych do ich potomków. Właściwości props są tylko do odczytu. Nie należy ich w jakikolwiek sposób modyfikować,
   
   10. PropTypes - gwarancja odpowiedniego typu danych w gałęzi nr [06](https://github.com/zacniewski/materials-about-internet-apps-and-www-websites/tree/cra/06-proptypes/React-pierwsze-kroki)
-    
+    - dla niewłaściwego typu otrzymujemy ostrzeżenie:  
+  ![proptype](images/proptype-warning.png)
 
+  11. State (stan)
+    - komponent potrzebuje własnego stanu (state), gdy powiązane z nim dane zmieniają się w czasie. Na przykład, komponent Checkbox w zmiennej isChecked mógłby śledzić, czy jest zaznaczony, a komponent NewsFeed mógłby przechowywać pobrane posty w fetchedPosts,
+    - najistotniejszą różnicą pomiędzy state i props jest to, że właściwości props są dostarczane przez komponent nadrzędny, a stanem state zarządza sam komponent. Komponent nie może modyfikować swoich właściwości props, ale może zmieniać swój stan state.
