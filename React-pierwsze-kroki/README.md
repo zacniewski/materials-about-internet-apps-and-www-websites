@@ -14,6 +14,8 @@
   * praca z narzędziem [create-react-app](https://create-react-app.dev/docs/getting-started)
 
 ### Zagadnienia
-  * instalacja  
+  * instalacja pakietu create-react-app
+  ![quickstart](images/instalacja_cra.png)  
+   * tworzenia aplikacja za pomocą create-react-app
   ![quickstart](images/quickstart.png)  
   * next
