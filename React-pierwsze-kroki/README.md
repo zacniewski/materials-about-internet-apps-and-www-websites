@@ -34,6 +34,6 @@
   * komponent w React.js
     - komponenty funkcyjne,
     - komponenty klasowe,
-    - własny komponent Hello (plik Hello.jsx) i sprawdzenie poprawności działania,
+    - własny komponent Hello (plik Hello.jsx) w gałęzi '01' i sprawdzenie poprawności działania (```npm start```),
 
 
