@@ -15,7 +15,14 @@ class App extends Component {
         { id: 2, name: "kolacja", time: "19:30" }
       ]
     };
+
+    this.handleEditEvent = this.handleEditEvent.bind(this);
   }
+
+  handleEditEvent(val) {
+    console.log(val);
+  }
+
   render() {
     const my_events = this.state.events.map(el => {
       return <Countdown key={el.id} name={el.name} time={el.time} />
@@ -23,7 +30,10 @@ class App extends Component {
     return (
       <div className="app"> 
         {my_events} 
-        <EditEvent onSave={() => alert("Klik działa bez zarzutu!")}/>
+        <EditEvent 
+          onInputChange={val => this.handleEditEvent(val)} 
+          onSave={() => alert("Klik działa bez zarzutu!")}
+        />
       </div>
     );
   }
