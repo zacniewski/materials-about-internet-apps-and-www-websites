@@ -84,3 +84,4 @@
   14. Komponent edycji wydarzenia w gałęzi [10]
     - komponenty React'owe można wykorzystywać z [Material-UI](https://material-ui.com/),
     - [obsługa](https://upmostly.com/tutorials/react-onchange-events-with-examples) zmiany wartości input'a w React (onchange w JS, onChange w React),
+    - właściwość zdarzenie ['target'](https://www.w3schools.com/jsref/event_target.asp)
