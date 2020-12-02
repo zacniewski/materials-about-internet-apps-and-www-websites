@@ -82,3 +82,5 @@
     - CSS dla komponentów i CSS główny w gałęzi [09](https://github.com/zacniewski/materials-about-internet-apps-and-www-websites/tree/cra/09-css/React-pierwsze-kroki)
 
   14. Komponent edycji wydarzenia w gałęzi [10]
+    - komponenty React'owe można wykorzystywać z [Material-UI](https://material-ui.com/),
+    - [obsługa](https://upmostly.com/tutorials/react-onchange-events-with-examples) zmiany wartości input'a w React (onchange w JS, onChange w React),
