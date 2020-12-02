@@ -1,4 +1,6 @@
 import React from "react";
+import { Button } from '@material-ui/core';
+
 import "./EditEvent.css";
 
 const EditEvent = props => {
@@ -40,8 +42,8 @@ const EditEvent = props => {
           }
         />
       </div>
-      <button onClick={() => props.onSave()}>OK</button>
-      <button>Cancel</button>
+      <Button onClick={() => props.onSave()}>OK</Button>
+      <Button>Cancel</Button>
     </div>
   );
 };
