@@ -13,9 +13,7 @@ const EditEvent = props => {
           id="name"
           name="name"
           value={props.name}
-          onChange={e =>
-            props.onInputChange({ [e.target.name]: e.target.value })
-          }
+          onChange={() => console.log("Zmiana") }
         />
       </div>
       <div className="edit-event__input-group">
