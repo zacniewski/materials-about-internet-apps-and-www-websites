@@ -125,4 +125,13 @@
       <Button onClick={() => props.onSave()}>OK</Button>
       ```
       - należy pamiętać o nawiasach () przy nazwie funkcji!
-      - wcześniej w apkach webowych "stan" aplikacji był umieszczony w HTMLu (jego atrybutach). Mozna było odczytac wartości określonych atrybutów i je modyfikować, wyświetlać itp. W React.js mamy "po prostu" stan (state), gdzie będzie nasze źródło danych
+      - wcześniej w apkach webowych "stan" aplikacji był umieszczony w HTMLu (jego atrybutach). Mozna było odczytac wartości określonych atrybutów i je modyfikować, wyświetlać itp. W React.js mamy "po prostu" stan (state), gdzie będzie nasze źródło danych,
+    - odczytywanie wartości z pól formularza z wykorzystaniem [onChange](https://pl.reactjs.org/docs/dom-elements.html):
+      - dodajemy reactowy atrybut onChange w znaczniku 'input':
+      ```
+      onChange={(e) => console.log(e.target.value) }
+      ```
+      - możemy w konsoli wyświetlić też obiekt z odpowiednimi informacjami:
+      ```
+      onChange={(e) => console.log(e.target.value, e.target.name) }
+      ```
