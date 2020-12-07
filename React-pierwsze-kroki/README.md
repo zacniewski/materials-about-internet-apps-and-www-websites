@@ -116,7 +116,7 @@
     - [obsługa zdarzeń](https://pl.reactjs.org/docs/handling-events.html) w React, pod linkiem omówione jest (użyte w przykładzie) m.in. onClick,
     - przesyłanie funkcji do komponentów:
 
-      - w komponencie nadrzędnym definiujemy funkcję:
+      - w komponencie nadrzędnym definiujemy funkcję onSave (gałąź nr [11](https://github.com/zacniewski/materials-about-internet-apps-and-www-websites/tree/cra/11-edycja-wydarzenia-part1/React-pierwsze-kroki)):
       ``` 
       <EditEvent onSave={() => alert("Klik działa bez zarzutu!")} />
       ```
