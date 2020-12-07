@@ -117,7 +117,8 @@
     - przesyłanie funkcji do komponentów:
 
       - w komponencie nadrzędnym definiujemy funkcję:
-      ``` <EditEvent onSave={() => alert("Klik działa bez zarzutu!")} />
+      ``` 
+      <EditEvent onSave={() => alert("Klik działa bez zarzutu!")} />
       ```
       - korzystamy z niej w komponencie potomnym:
       ```
