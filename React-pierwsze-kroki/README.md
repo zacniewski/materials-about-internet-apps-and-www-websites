@@ -182,6 +182,7 @@
   }
   ```
   - korzystamy z metody [setState()](https://pl.reactjs.org/docs/state-and-lifecycle.html) do zmiany stanu komponentu
-  - po wpisaniu czegokolwiek w pole formularza korzystające z metody handleEditEvent i skorzystaniu z React Dev Tools w konsoli przegladarki, widzimy że w stanie pojawił się nowy wpis:  
-  ![editedEvents](images/editedEvents.png)
+  - po wpisaniu czegokolwiek w pole formularza korzystające z metody handleEditEvent i skorzystaniu z React Dev Tools w konsoli przeglądarki, widzimy że w stanie pojawił się nowy wpis:  
+  ![editedEvents](images/editedEvents.png)  
+  - udało nam się zmienić stan komponentu :smiley:  
 
