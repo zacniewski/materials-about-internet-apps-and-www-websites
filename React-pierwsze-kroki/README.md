@@ -118,7 +118,7 @@
 
       - w komponencie nadrzędnym definiujemy funkcję:
       ``` <EditEvent onSave={() => alert("Klik działa bez zarzutu!")} />
-        ```
+      ```
       - korzystamy z niej w komponencie potomnym:
       ```
       <Button onClick={() => props.onSave()}>OK</Button>
