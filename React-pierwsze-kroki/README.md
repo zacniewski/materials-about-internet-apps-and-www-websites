@@ -56,7 +56,7 @@
 7. Komponent Countdown
     - zwracamy tylko jeden element HTML! (sprawdzić co będzie, gdy zwracamy wiecej)
     - 'App' jako konwencja nazewnicza (zamiast 'Hello') w gałęzi [03](https://github.com/zacniewski/materials-about-internet-apps-and-www-websites/tree/cra/03-komponenty-i-props/React-pierwsze-kroki/react-pierwsze-kroki/src),
-    - class vs className w przypadku atrybutów, czyli [różnice](https://pl.reactjs.org/docs/dom-elements.html) w atrybutach HTML i React DOM,
+    - class vs className w przypadku atrybutów, czyli [różnice](https://pl.reactjs.org/docs/dom-elements.html) w atrybutach HTML i React DOM, ważne przykłady!
 
 8. zagnieżdżanie komponentów (gałąź nr [04](https://github.com/zacniewski/materials-about-internet-apps-and-www-websites/tree/cra/04-zagniezdzanie-komponentow/React-pierwsze-kroki/react-pierwsze-kroki/src))
 
@@ -113,4 +113,13 @@
     - komponenty React'owe można wykorzystywać z [Material-UI](https://material-ui.com/),
     - [obsługa](https://upmostly.com/tutorials/react-onchange-events-with-examples) zmiany wartości input'a w React (onchange w JS, onChange w React),
     - właściwość zdarzenie ['target'](https://www.w3schools.com/jsref/event_target.asp)
-    - [obsługa zdarzeń](https://pl.reactjs.org/docs/handling-events.html) w React,
+    - [obsługa zdarzeń](https://pl.reactjs.org/docs/handling-events.html) w React, pod linkiem omówione jest (użyte w przykładzie) m.in. onClick,
+    - przesyłanie funkcji do komponentów:
+
+      - w komponencie nadrzędnym definiujemy funkcję:
+      ``` <EditEvent onSave={() => alert("Klik działa bez zarzutu!")} />
+        ```
+      - korzystamy z niej w komponencie potomnym:
+      ```
+      <Button onClick={() => props.onSave()}>OK</Button>
+      ```
