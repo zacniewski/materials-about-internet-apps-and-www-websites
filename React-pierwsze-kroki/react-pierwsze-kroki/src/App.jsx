@@ -20,7 +20,7 @@ class App extends Component {
   }
 
   handleEditEvent(val) {
-    console.log(val);
+    this.setState({ editedEvents: val });
   }
 
   render() {

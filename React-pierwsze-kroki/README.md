@@ -107,7 +107,7 @@
 
     - CSS dla komponentów i CSS główny w gałęzi [09](https://github.com/zacniewski/materials-about-internet-apps-and-www-websites/tree/cra/09-css/React-pierwsze-kroki)
 
-14. Komponent edycji wydarzenia w gałęzi [10]
+14. Komponent edycji wydarzenia w gałęzi [10](https://github.com/zacniewski/materials-about-internet-apps-and-www-websites/tree/cra/10-komponent-edycji-wydarzenia/React-pierwsze-kroki)
 
 
     - komponenty React'owe można wykorzystywać z [Material-UI](https://material-ui.com/),
@@ -163,3 +163,25 @@
             props.onInputChange({ [e.target.name]: e.target.value })
           }
       ```
+
+15. Proste nadpisanie stanu [12](https://github.com/zacniewski/materials-about-internet-apps-and-www-websites/tree/cra/12-proste-nadpisanie-stanu/React-pierwsze-kroki)
+
+  - w stanie (```this.state```) tworzymy pole editedEvents na zmiany naszych wydarzeń:
+  ```
+  events: [
+        { id: 0, name: "śniadanie", hour: "07", minute: "00" },
+        { id: 1, name: "obiad", hour: "15", minute: "00" },
+        { id: 2, name: "kolacja", hour: "19", minute: "00" }
+      ],
+      editedEvent: ""
+  ```
+  - w funkcji handleEditEvent robimy zmianę na:
+  ```
+  handleEditEvent(val) {
+    this.setState({ editedEvents: val });
+  }
+  ```
+  - korzystamy z metody [setState()](https://pl.reactjs.org/docs/state-and-lifecycle.html) do zmiany stanu komponentu
+  - po wpisaniu czegokolwiek w pole formularza korzystające z metody handleEditEvent i skorzystaniu z React Dev Tools w konsoli przegladarki, widzimy że w stanie pojawił się nowy wpis:  
+  ![editedEvents](images/editedEvents.png)
+
