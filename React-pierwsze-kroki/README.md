@@ -112,7 +112,7 @@
 
     - komponenty React'owe można wykorzystywać z [Material-UI](https://material-ui.com/),
     - [obsługa](https://upmostly.com/tutorials/react-onchange-events-with-examples) zmiany wartości input'a w React (onchange w JS, onChange w React),
-    - właściwość zdarzenie ['target'](https://www.w3schools.com/jsref/event_target.asp)
+    - właściwość zdarzenia ['target'](https://www.w3schools.com/jsref/event_target.asp)
     - [obsługa zdarzeń](https://pl.reactjs.org/docs/handling-events.html) w React, pod linkiem omówione jest (użyte w przykładzie) m.in. onClick,
     - przesyłanie funkcji do komponentów:
 
@@ -120,13 +120,14 @@
       ``` 
       <EditEvent onSave={() => alert("Klik działa bez zarzutu!")} />
       ```
+      - nazwa onSave jest wymyslona przez nas, może byc oczwyiśie inna,
       - korzystamy z niej w komponencie potomnym:
       ```
       <Button onClick={() => props.onSave()}>OK</Button>
       ```
       - należy pamiętać o nawiasach () przy nazwie funkcji!
       - wcześniej w apkach webowych "stan" aplikacji był umieszczony w HTMLu (jego atrybutach). Mozna było odczytac wartości określonych atrybutów i je modyfikować, wyświetlać itp. W React.js mamy "po prostu" stan (state), gdzie będzie nasze źródło danych,
-    - odczytywanie wartości z pól formularza z wykorzystaniem [onChange](https://pl.reactjs.org/docs/dom-elements.html):
+    - odczytywanie wartości z pól formularza z wykorzystaniem [onChange](https://pl.reactjs.org/docs/dom-elements.html), na razie tylko w komponencie potomnym EditEvent:
       - dodajemy reactowy atrybut onChange w znaczniku 'input':
       ```
       onChange={(e) => console.log(e.target.value) }
@@ -134,4 +135,31 @@
       - możemy w konsoli wyświetlić też obiekt z odpowiednimi informacjami:
       ```
       onChange={(e) => console.log({ [e.target.name]: e.target.value } )
+      ```
+    - odczytywanie wartości z pól formularza z wykorzystaniem props (czyli przesyłanie danych z komponentu nadrzędnego do potomnego):
+      - tworzymy funkcje pomocniczą w komponencie nadrzędnym:
+      ```
+      handleEditEvent(val) {
+          console.log(val);
+      }
+      ```
+      - dowiązujemy ww. funkcję do instancji klasy za pomocą metody bind():
+      ```
+          this.handleEditEvent = this.handleEditEvent.bind(this);
+      ```
+      - robimy dowiązanie wewnątrz klasy (np. w konstruktorze, jak w przykładzie na repo),
+      - praktyczne wytłumaczenie metody [bind()](https://typeofweb.com/poprawne-bindowanie-funkcji-react-js/) wraz z ciekawym obejściem jej używania w create-react-app poprzez użycie funkcji strzałkowych w odpowiednim miejscu,
+      - w oficjalnej [dokumentacji React'a](https://pl.reactjs.org/docs/handling-events.html) też jest o tym rozsądnie napisane,
+      - teraz możemy wykorzystać naszą funkcję w komponencie nadrzędnym, tworząc atrybut o nazwie np. onInputChange:
+      ``` 
+      <EditEvent 
+          onInputChange={val => this.handleEditEvent(val)} 
+                ...        
+       />
+      ```
+      - z kolei w komponencie potomny EditEvent zmieniany obsługę zdarzenia onChange, na taką która wykorzystuje naszą ww. funkcję onInputChange:
+      ```
+      onChange={e =>
+            props.onInputChange({ [e.target.name]: e.target.value })
+          }
       ```
