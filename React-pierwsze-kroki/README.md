@@ -133,5 +133,5 @@
       ```
       - możemy w konsoli wyświetlić też obiekt z odpowiednimi informacjami:
       ```
-      onChange={(e) => console.log(e.target.value, e.target.name) }
+      onChange={(e) => console.log({ [e.target.name]: e.target.value } )
       ```
