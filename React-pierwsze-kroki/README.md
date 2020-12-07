@@ -124,3 +124,5 @@
       ```
       <Button onClick={() => props.onSave()}>OK</Button>
       ```
+      - należy pamiętać o nawiasach () przy nazwie funkcji!
+      - wcześniej w apkach webowych "stan" aplikacji był umieszczony w HTMLu (jego atrybutach). Mozna było odczytac wartości określonych atrybutów i je modyfikować, wyświetlać itp. W React.js mamy "po prostu" stan (state), gdzie będzie nasze źródło danych
