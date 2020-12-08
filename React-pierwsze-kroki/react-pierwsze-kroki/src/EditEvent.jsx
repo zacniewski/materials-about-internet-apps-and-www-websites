@@ -13,8 +13,9 @@ const EditEvent = props => {
           id="name"
           name="name"
           value={props.name}
-          //onChange={(e) => console.log(e.target.value) }
-          onChange={(e) => console.log(e.target.value, e.target.name) }
+          onChange={e =>
+            props.onInputChange({ [e.target.name]: e.target.value })
+          }
         />
       </div>
       <div className="edit-event__input-group">
