@@ -181,7 +181,8 @@
     this.setState({ editedEvents: val });
   }
   ```
-  - korzystamy z metody [setState()](https://pl.reactjs.org/docs/state-and-lifecycle.html) do zmiany stanu komponentu
+  - korzystamy z metody [setState()](https://pl.reactjs.org/docs/state-and-lifecycle.html) do zmiany stanu komponentu,
+  - w ww. linku w przyjemny sposób podana jest metodologia przejścia z 'props' na 'state',
   - po wpisaniu czegokolwiek w pole formularza korzystające z metody handleEditEvent i skorzystaniu z React Dev Tools w konsoli przeglądarki, widzimy że w stanie pojawił się nowy wpis:  
   ![editedEvents](images/editedEvents.png)  
   - udało nam się zmienić stan komponentu :smiley:,  
