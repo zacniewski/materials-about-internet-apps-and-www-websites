@@ -188,3 +188,7 @@
   - udało nam się zmienić stan komponentu :smiley:,  
   - problemem jest to, że funkcja handleEditEvent powoduje wpisanie do pola editedEvent **tylko** aktualnie zmienianej wartości w polu formularza,
 
+16. Użycie Object.assign 
+
+  * [dokumentacja](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Object/assign) MDN,
+  
