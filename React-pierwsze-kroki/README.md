@@ -186,5 +186,5 @@
   - po wpisaniu czegokolwiek w pole formularza korzystające z metody handleEditEvent i skorzystaniu z React Dev Tools w konsoli przeglądarki, widzimy że w stanie pojawił się nowy wpis:  
   ![editedEvents](images/editedEvents.png)  
   - udało nam się zmienić stan komponentu :smiley:,  
-  - problemem jest to, że funkcja handleEditEvent powoduje wpisanie do pola editedEvent aktualnie zmienianej wartości w polu formularza,
+  - problemem jest to, że funkcja handleEditEvent powoduje wpisanie do pola editedEvent **tylko** aktualnie zmienianej wartości w polu formularza,
 
