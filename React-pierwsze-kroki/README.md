@@ -191,4 +191,4 @@
 16. Użycie Object.assign 
 
   * [dokumentacja](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Object/assign) MDN,
-  
+  * dokonamy aktualizacji stanu 
