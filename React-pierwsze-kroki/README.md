@@ -191,4 +191,26 @@
 16. Użycie Object.assign 
 
   * [dokumentacja](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Object/assign) MDN,
-  * dokonamy aktualizacji stanu 
+  * modyfikujemy (id na sztywno na razie) w stanie pole editedEvents:  
+  ```
+  editedEvent: {
+        id: 3,
+        name: "",
+        hour: "",
+        minute: ""
+      }
+      ```
+
+  * dokonamy aktualizacji stanu w funkcji handleEditEvent() przy pomocy Object.assign:  
+  ```
+  handleEditEvent(val) {
+    this.setState(prevState => {
+      return {
+        editedEvent: Object.assign(prevState.editedEvent, val)
+      };
+    });
+  }
+  ```
+  * refaktorujemy pole 'events', tak by miało strukturę identyczną jak editedEvent, czyli rozbicie na 'name', 'hour, i 'minute' (patrz kod),  
+  
+  * [spread operator, spread syntax](https://kursjs.pl/kurs/es6/spread-rest.php),  
