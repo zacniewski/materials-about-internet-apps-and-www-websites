@@ -191,7 +191,7 @@
 16. Użycie Object.assign 
 
   * [dokumentacja](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Object/assign) MDN,
-  * modyfikujemy (id na sztywno na razie) w stanie pole editedEvents:  
+  * modyfikujemy (id na sztywno na razie jest przypisane) w stanie pole editedEvents:  
   ```
   editedEvent: {
         id: 3,
@@ -212,5 +212,5 @@
   }
   ```
   * refaktorujemy pole 'events', tak by miało strukturę identyczną jak editedEvent, czyli rozbicie na 'name', 'hour, i 'minute' (patrz kod),  
-  
+
   * [spread operator, spread syntax](https://kursjs.pl/kurs/es6/spread-rest.php),  
