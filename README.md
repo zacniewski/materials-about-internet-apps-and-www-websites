@@ -13,7 +13,7 @@
   * folder 'Gra-Breakout-JavaScript' zawiera kompletny kod gry Breakout 2D z tutorialu [MDN](https://developer.mozilla.org/pl/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript)  
   * folder 'klikacz-jQuery' zawiera przykład użycia localStorage do wypełniania tabel określonymi wartościami danych przy użyciu jQuery  
   * folder 'myshop-with-django' zawiera projekt sklepu internetowego z wykorxystaniem Django i kilku dodatkowych narzędzi typu 3rd party    
-  * folder 'prosto-o-web-socket' zawiera przykłady wykorzystania Web Socket ze [strony](https://bulldogjob.pl/news/751-prosto-o-websocket) Bulldogjob  
+  * folder 'prosto-o-web-socket' zawiera przykłady wykorzystania Web Socket ze [strony](https://javascript.info/websocket) javascript.info  
   * folder 'Python-zastosowania' zawiera programy pokazujące różne zastosowania języka Python  
   * folder 'React-pierwsze-kroki' zawiera aplikację React napisaną z użyciem narzędzia 'create-react-app'  
   * folder 'react-typeofweb' zawiera proste projekty React ze strony [Type of Web](https://typeofweb.com/wprowadzenie-kurs-react-js/)   
