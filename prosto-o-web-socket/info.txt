@@ -1,0 +1,2 @@
+należy zainstalować moduł 'ws':
+npm install ws
