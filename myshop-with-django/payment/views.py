@@ -31,8 +31,8 @@ def payment_process(request):
             # store the unique transaction id
             order.braintree_id = result.transaction.id
             order.save()
-            # launch asynchronous task
-            payment_completed.delay(order.id)
+            # launch asynchronous task - later
+            # payment_completed.delay(order.id)
             return redirect('payment:done')
         else:
             return redirect('payment:canceled')
