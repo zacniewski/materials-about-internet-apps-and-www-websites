@@ -13,6 +13,7 @@
   9. folder 'django-spa-auth' zawiera 3 projekty demonstrujące różne wersje uwierzytelniania  
   10. folder 'Gra-Breakout-JavaScript' zawiera kompletny kod gry Breakout 2D z tutorialu [MDN](https://developer.mozilla.org/pl/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript)  
   11. folder 'klikacz-jQuery' zawiera przykład użycia localStorage do wypełniania tabel określonymi wartościami danych przy użyciu jQuery  
+  11a. folder 'lab1-www' zawiera przykład wykonania laboratorium nr 1 z serwisów WWW    
   12. folder 'myshop-with-django' zawiera projekt sklepu internetowego z wykorxystaniem Django i kilku dodatkowych narzędzi typu 3rd party    
   13. folder 'prosto-o-web-socket' zawiera przykłady wykorzystania Web Socket ze [strony](https://javascript.info/websocket) javascript.info  
   14. folder 'Python-zastosowania' zawiera programy pokazujące różne zastosowania języka Python  

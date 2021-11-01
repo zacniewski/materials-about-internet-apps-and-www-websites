@@ -1,0 +1,15 @@
+h1 {
+    color: red;
+}
+
+#span1 {
+    color: green;
+}
+
+.pomaranczowy {
+    color: orange;
+    font-weight: bold;
+    font-size: 44px;
+}
+
+/* Sekcja nagłówka */
