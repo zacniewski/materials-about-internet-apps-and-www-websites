@@ -46,10 +46,10 @@ funkcji:
 */
 
 const btn2 = document.getElementById('btn2');
-function clickHandler() {
+function clickHandler2() {
     console.log('Kliknięto w przycisk - addEventListener nr 2!');
 }
-btn2.addEventListener('click', clickHandler);
+btn2.addEventListener('click', clickHandler2);
 
 /*
 Bezpośrednie przypisywanie funkcji obsługującej zdarzenie do pola w referen-
@@ -89,13 +89,13 @@ jako referencję:
 */
 
 const btn4 = document.getElementById('btn4');
-function clickHandler() {
+function clickHandler4() {
     console.log('Kliknięto raz w przycisk btn4!');
-    btn4.removeEventListener('click', clickHandler);
+    btn4.removeEventListener('click', clickHandler4);
     console.log('Usunięta obsługa kliknięcia w btn4!');
 
 }
-btn4.addEventListener('click', clickHandler);
+btn4.addEventListener('click', clickHandler4);
 
 /*
 Wewnątrz metody clickHandler wyświetlamy powiadomienie, a następnie odpinamy nasłuchi-
