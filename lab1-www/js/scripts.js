@@ -41,7 +41,7 @@ console.log(dog);
 
 let guzik = document.getElementById("guziczek");
 console.log(guzik); 
-guzik.innerHTML = 123;
+guzik.innerHTML = 1234;
 
 let guziki = document.getElementsByClassName("btn-primary");
 console.log(guziki);

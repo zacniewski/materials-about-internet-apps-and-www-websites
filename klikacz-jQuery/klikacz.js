@@ -26,5 +26,7 @@ console.log(table_dane);
 $.getJSON( "https://jsonplaceholder.typicode.com/users/10", function( data ) {
   let name = data.name;
   let id = data.id;
-  console.log( "User " + name + " has id=" + id);
+  let city = data.address.city;
+
+  console.log( "User " + name + " has id=" + id + "and lives in " + city );
  });
