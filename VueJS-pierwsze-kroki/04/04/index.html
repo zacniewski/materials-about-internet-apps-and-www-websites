@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+
+	<style>
+
+		table {
+			width: 100%;
+			border: 1px solid black;
+			font-family: Arial;
+			text-align: center;
+		}
+
+		table td {
+			border: 1px solid black;
+		}
+
+		table tr {
+			cursor: pointer;
+		}
+
+		table td:nth-of-type(1) {
+			width: 50px;
+		}
+
+		table td:nth-of-type(2) {
+			width: 200px;
+		}
+
+		table td:nth-of-type(3) {
+			width: 100px;
+		}				
+
+		[v-cloak] {
+
+			display: none;
+		}
+
+
+	</style>
+
+
+</head>
+<body>
+
+
+<div id="app" v-cloak>
+
+
+<h1>Produkty w sklepie</h1>
+
+<table v-if="availableProducts.length">
+
+	<thead>
+		<tr>
+			<th>Lp.</th>
+			<th>Produkt</th>
+			<th>Cena</th>
+			<th>Koszyk</th>
+		</tr>
+	</thead>
+
+	<tbody>
+
+		<tr v-for="(product, n) in availableProducts" >
+			<td>{{ n + 1 }}</td>
+			<td>{{ product.product }}</td>
+			<td>{{ product.price }}</td>
+			<td @click="select(n)">{{ product.selected }}</td>
+		</tr>
+		
+	</tbody>
+
+</table>
+
+
+<p v-else>Brak produktów w sklepie...</p>
+
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+
+
+new Vue ({
+
+	el: '#app',
+
+	data: {
+		
+		availableProducts: [
+
+
+			
+			{product: 'Myszka',  price: '50', selected: 'dodaj do koszyka'},
+			{product: 'Laptop',  price: '2550', selected: 'dodaj do koszyka'},
+			{product: 'Komputer stacjonalrny',  price: '2150', selected: 'dodaj do koszyka'},
+			{product: 'Monitor',  price: '1400', selected: 'dodaj do koszyka'}
+		
+		],
+
+		currency: 'zł'
+	}, 
+
+	methods: {
+
+		select: function(i){
+			this.availableProducts[i].selected = this.availableProducts[i].selected == 'dodaj do koszyka' ? 'w koszyku' : 'dodaj do koszyka';
+		}
+	}
+
+});	
+
+
+</script>
+</body>
+</html>

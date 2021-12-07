@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+
+	<style>
+
+
+		[v-cloak] {
+
+			display: none;
+		}
+
+		.square {
+			width: 100px;
+			height: 100px;
+		}
+
+		.red {
+			background-color: red;
+		}
+
+		.yellow {
+			background-color: yellow;
+			margin-left: 100px;
+		}
+
+		.green {
+			background-color: green;
+			margin-left: 200px;
+		}
+	
+
+	</style>
+
+
+</head>
+<body>
+
+	<!--
+
+	Vue dodaje do elementów następujące klasy:
+
+	Te klasy, kiedy element jest pokazywany:
+
+	v-enter
+	v-enter-to
+	v-enter-active
+
+	Te klasy, kiedy element jest ukrywany:
+
+	v-leave
+	v-leave-to
+	v-leave-active
+
+	-->
+
+
+	<div id="app" v-cloak>
+
+		<p>
+			<input type="radio" value="red" v-model="mode" /> Czerwony
+			<input type="radio" value="yellow" v-model="mode" /> Zółty
+			<input type="radio" value="green" v-model="mode" /> Zielony
+		</p>
+
+		<div class="square red"></div>
+		<div class="square yellow"></div>
+		<div class="square green"></div>
+
+
+	</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+
+
+
+new Vue ({
+
+	el: '#app',
+
+	data: {
+		mode: 'red'
+	}
+
+});	
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Vue.js - kurs video</title>
+
+    <style>
+	    [v-cloak] {
+	    	display: none;
+		} 
+	</style>
+
+</head>
+<body>
+
+	<div id="app" v-cloak>
+
+		<!--
+		<a href="https://videopoint.pl/">
+			<img src="https://static01.helion.com.pl/global/okladki/326x466/39591f6b62f7af10acf441e51acdc54e,vpfrjs.jpg" />
+		</a>
+	-->
+
+		<a :href="getLing()">
+			<img :src="getImage()" />
+		</a>
+
+
+	</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.21/vue.js"></script>
+<script>
+
+	// https://videopoint.pl/
+	// https://static01.helion.com.pl/global/okladki/326x466/39591f6b62f7af10acf441e51acdc54e,vpfrjs.jpg
+
+	new Vue({
+
+		el: "#app",
+		data: {
+			image: "https://static01.helion.com.pl/global/okladki/326x466/39591f6b62f7af10acf441e51acdc54e,vpfrjs.jpg",
+			link: "https://videopoint.pl/"
+		}, 
+		methods: {
+			getImage: function(){
+				return this.image;
+			},  
+
+			getLing: function(){
+				return this.link;
+			}
+		}
+	});
+
+</script>
+</body>
+</html>

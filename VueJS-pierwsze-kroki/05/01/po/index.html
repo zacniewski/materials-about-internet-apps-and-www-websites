@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+
+	<style>
+
+		[v-cloak] {
+
+			display: none;
+		}
+
+		input {
+
+			display: block;
+			width: 200px;
+			margin-top: 10px;
+		}
+
+	</style>
+
+
+</head>
+<body>
+
+
+<div id="app" v-cloak>
+
+	<h1>Uzupełnij dane</h1>
+
+	<form action="#">
+
+		<input placeholder="Imię i nazwisko" ref="name" />
+		<input placeholder="Wiek"  ref="age" />
+		<input placeholder="Zawód"  ref="profession" />
+		<input placeholder="Forma zatrudnienia"  ref="employment" />
+		<input placeholder="Wynagrodzenie"  ref="salary" />
+
+
+		<input type="button" value="Zatwierdź" @click="check" />
+
+		<h2>Sprawdź poprawność danych</h2>
+
+		<p><b>Imię i nazwisko:</b> {{ name }}</p>
+		<p><b>Wiek:</b> {{ age }}</p>
+		<p><b>Zawód:</b> {{ profession }}</p>
+		<p><b>Forma zatrudnienia:</b> {{ employment }}</p>
+		<p><b>Wynagrodzenie:</b> {{ salary }}</p>
+
+	</form>
+
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+
+
+new Vue ({
+
+	el: '#app',
+
+	data: {
+		name: "",
+		age: "",
+		profession: "",
+		employment: "",
+		salary: ""
+	}, 
+
+	methods: {
+
+		check: function(){
+
+			/*
+			this.name = document.getElementById('name').value;
+			this.age = document.getElementById('age').value;
+			this.profession = document.getElementById('profession').value;
+			this.employment = document.getElementById('employment').value;
+			this.salary = document.getElementById('salary').value;
+			*/
+
+			this.name = this.$refs.name.value;
+			this.age = this.$refs.age.value;
+			this.profession = this.$refs.profession.value;
+			this.employment = this.$refs.employment.value;
+			this.salary = this.$refs.salary.value;
+
+		}
+
+	}
+
+});
+
+
+</script>
+</body>
+</html>

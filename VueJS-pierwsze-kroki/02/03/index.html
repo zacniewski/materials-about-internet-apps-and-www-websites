@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Vue.js - kurs video</title>
+
+    <style>
+	    [v-cloak] {
+	    	display: none;
+		} 
+	</style>
+
+</head>
+<body>
+
+
+	<div id="app" v-cloak>
+		<h1>{{ header }}</h1>
+		<p>Akapit 1: {{ text }}</p>
+		<p>Akapit 2: {{ text }}</p>
+		<br />
+		<p>Długość tekstu nagłówka: {{ getTextLength(header) }}</p>
+		<p>Długość tekstu akapitu: {{ getTextLength(text) }}</p>
+		<br />
+		<p>Długość tekstu nagłówka: {{ getHeaderLength() }}</p>		
+		<p>Długość tekstu nagłówka: {{ haderLength }}</p>			
+    </div>  
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.21/vue.js"></script>
+<script>
+
+	var vm = new Vue({
+
+		el: "#app",
+		data: {
+			header: "Treść nagłówka",
+			text: "Tekst akapitu",
+			haderLength: 0
+		},
+
+		methods: {
+
+			getTextLength: function(val){
+				return val.length;
+			},
+
+			getHeaderLength: function(){
+				return this.header.length;
+			},
+
+			getHeaderLength2: function(){
+				this.haderLength = this.header.length;
+			}
+
+		}
+	});
+
+
+	vm.getHeaderLength2();
+
+
+</script>
+</body>
+</html>

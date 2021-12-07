@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+<head>
+
+	<style>
+
+		[v-cloak] {
+
+			display: none;
+		}
+
+		input {
+
+			display: block;
+			width: 200px;
+			margin-top: 10px;
+		}
+
+	</style>
+
+
+</head>
+<body>
+
+
+<div id="app" v-cloak>
+
+	<h1>Uzupełnij dane</h1>
+
+	<form action="#">
+
+		<input placeholder="Imię i nazwisko" />
+		<input placeholder="Wiek" />
+		<input placeholder="Zawód" />
+		<input placeholder="Forma zatrudnienia" />
+		<input placeholder="Wynagrodzenie" />
+
+
+		<input type="button" value="Zatwierdź" />
+
+		<h2>Sprawdź poprawność danych</h2>
+
+		<p><b>Imię i nazwisko:</b> {{ name }}</p>
+		<p><b>Wiek:</b> {{ age }}</p>
+		<p><b>Zawód:</b> {{ profession }}</p>
+		<p><b>Forma zatrudnienia:</b> {{ employment }}</p>
+		<p><b>Wynagrodzenie:</b> {{ salary }}</p>
+
+	</form>
+
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+
+
+new Vue ({
+
+	el: '#app',
+
+	data: {
+		name: "",
+		age: "",
+		profession: "",
+		employment: "",
+		salary: ""
+	}, 
+
+	methods: {
+
+	}
+
+});
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+
+	<style>
+
+
+		[v-cloak] {
+
+			display: none;
+		}
+
+	</style>
+
+
+</head>
+<body>
+
+
+<div id="app" v-cloak>
+
+	<form action="#" >
+
+		<h1>Dodaj do koszyka</h1>
+
+		<h2>Akcesoria</h2>
+
+		<template v-for="poduct in products">
+			<input type="checkbox" v-model="poduct.checked" /> 
+				<b>{{ poduct.name | uppercase('Produkt: ') }}</b> {{ poduct.price }} {{ currency }} <br/>
+		</template>
+
+	</form>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+
+/*
+Vue.filter("uppercase", function(value){
+
+	return value.toUpperCase();
+
+});
+
+*/
+
+new Vue ({
+
+	el: '#app',
+
+	data: {
+
+		products: [
+
+			{
+				name: 'Myszka', 
+				price: 30, 
+				checked: false
+			},
+			{
+				name: 'Laptop', 
+				price: 2000, 
+				checked: false
+			},
+			{
+				name: 'Komputer stacjonarny', 
+				price: 3000, 
+				checked: false
+			},
+			{
+				name: 'Monitor', 
+				price: 1000, 
+				checked: false
+			},
+			{
+				name: 'Głośniki', 
+				price: 700, 
+				checked: false
+			},
+			{
+				name: 'Podkładka pod mysz', 
+				price: 10, 
+				checked: false
+			}
+		],
+
+		currency: 'zł'
+	},
+
+	filters: {
+
+		/*
+		uppercase: function(value){
+			return value.toUpperCase();
+		}
+		*/
+
+		uppercase: function(value, prefix){
+			return prefix + ' ' + value.toUpperCase();
+		}
+
+	}
+
+});	
+
+
+</script>
+</body>
+</html>

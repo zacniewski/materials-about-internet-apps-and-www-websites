@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+
+	<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">-->
+
+	<style>
+
+
+		[v-cloak] {
+
+			display: none;
+		}
+
+		.comp {
+			padding: 10px;
+			background-color: #ddd;
+			border: 1px solid #aaa;
+		}
+
+	</style>
+
+
+</head>
+<body>
+
+	<div id="app" v-cloak>
+
+		<input type="radio" value="wirners-tab" v-model="mode" /> Zwycięzcy<br />
+		<input type="radio" value="gifts-tab"  v-model="mode" /> Nagrody<br />
+
+		<component class="comp" :is="mode"></component>
+	
+	</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+
+
+var winersTab = {
+
+	template: `
+
+		<div>
+			<h1>Zwycięzcy</h1>
+
+			<table>
+				<tbody>
+
+					<tr>
+						<th>Imię</th>
+						<th>Nazwisko</th>
+						<th>Wiek</th>
+						<th>Zawód</th>
+					</tr>
+
+					<tr v-for="winer in winners">
+						<td>{{ winer.firstname }}</td>
+						<td>{{ winer.surname }}</td>
+						<td>{{ winer.age }}</td>
+						<td>{{ winer.profession }}</td>
+					</tr>
+
+				</tbody>
+			</table>
+		</div>
+
+		`,
+
+		data: function(){
+
+			return {
+				winners: [
+					{
+						firstname: "Jan",
+						surname: "Brzechwa",
+						age: 30,
+						profession: "Pisarz"
+					},
+
+					{
+						firstname: "Stefan",
+						surname: "Nowak",
+						age: 25,
+						profession: "Kierowca"
+					}, 
+
+					{
+						firstname: "Adam",
+						surname: "Iksiński",
+						age: 15,
+						profession: "Uczeń"
+					}
+				]
+			}
+		}
+}
+
+
+var giftsTab = {
+
+	template: `
+
+		<div>
+			<h1>Lista nagród</h1>
+			<table>
+				<tbody>
+
+					<tr>
+						<th>Lp.</th>
+						<th>Nagroda</th>
+					</tr>
+
+					<tr v-for="(gift, i) in gifts">
+						<td>{{ i + 1 }}</td>
+						<td>{{ gift }}</td>
+					</tr>
+
+				</tbody>
+			</table>	
+		</div>		
+	`,	
+
+
+	data: function(){
+
+		return {
+			gifts: 
+				["laptop", "pendrive", "myszka", "głośniki"]
+			}
+	}
+
+}
+
+
+new Vue ({
+
+	el: '#app',
+
+	data: {
+		mode: "wirners-tab"
+	},
+
+	components: {
+		"wirners-tab": winersTab,
+		"gifts-tab": giftsTab
+	}
+
+
+
+});	
+
+
+</script>
+</body>
+</html>

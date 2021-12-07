@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+
+	<style>
+
+
+		[v-cloak] {
+
+			display: none;
+		}
+
+	</style>
+
+
+</head>
+<body>
+
+
+	<div id="app" v-cloak>
+
+		<business-card 
+			my-header="Nagłowek"
+			my-firstname="Jacek" 
+			my-lastname="Nowak"
+			:my-age="1"
+			my-profession="Kierowca">	
+		</business-card>
+
+	</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+
+var businessCard = {
+
+	template: `
+
+		<div>
+			<h1>{{ header }}</h1>
+
+			<p>Imię: {{ firstname }}</p>
+			<p>Nazwisko: {{ surname }}</p>
+			<p>Wiek: {{ age }}</p>
+			<p>Zawód: {{ profession }}</p>
+		</div>	
+
+		`,
+
+	/*props: ["myHeader", "myFirstname", "myLastname", "myAge", "myProfession"],*/
+
+	props: {
+
+		myHeader: {
+			default: "Dane osobowe użytkownika",
+			validator: function(value){
+				return value.length >=3 && value.length <=20;
+			}
+		},
+		myFirstname: {
+			required: true,
+			validator: function(value){
+				return value.length >=3 && value.length <=15;
+			}
+		},
+		myLastname: {
+			required: true,
+			validator: function(value){
+				return value.length >=3 && value.length <=15;
+			}
+		},
+		myAge: {
+			required: true,
+			type: Number,
+			validator: function(value){
+				return value > 0;
+			}
+		},
+		myProfession: {
+			required: true,
+			validator: function(value){
+				return value.length >=3 && value.length <=20;
+			}
+		}
+	},
+
+	data: function(){
+
+		return{
+
+			header: this.myHeader,
+			firstname: this.myFirstname,
+			surname: this.myLastname,
+			age: this.myAge,
+			profession: this.myProfession
+
+		}
+	}
+
+};
+
+
+new Vue ({
+
+	el: '#app',
+
+	
+	data: {
+
+	},
+
+	components: {
+
+		"business-card": businessCard
+
+	}
+
+});	
+
+
+
+</script>
+</body>
+</html>

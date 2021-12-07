@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Vue.js - kurs video</title>
+
+    <style>
+	    [v-cloak] {
+	    	display: none;
+		} 
+	</style>
+
+</head>
+<body>
+
+<!--
+
+	<div id="app" v-cloak>
+		<p>{{ getCar }}</p>		
+		<p>{{ getYear }} </p>	
+		<br />
+		<p>{{ getCar }}</p>		
+		<p>{{ getYear }} </p>	
+		<br />
+		<p>{{ getCar }}</p>		
+		<p>{{ getYear }} </p>
+		<br />
+		<p>{{ getCar }}</p>	
+		<p>{{ getYear }} </p>
+		<br />
+		<p>{{ getCar }}</p>		
+		<p>{{ getYear }} </p>								
+    </div>  
+
+-->
+
+	<div id="app" v-cloak>
+
+		<p>{{ getNumber() }}</p>
+		<p>{{ getNumber() }}</p>
+		<p>{{ getNumber() }}</p>
+		<p>{{ getNumber() }}</p>
+
+	</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.21/vue.js"></script>
+<script>
+
+/*
+	var vm = new Vue({
+
+		el: "#app",
+		data: {
+			mark: "Peugeot",
+			model: 306,
+			year: 1999
+		},
+
+		computed: {
+			getCar: function(){
+				var car = "Samochód: " + this.mark + " " + this.model;
+				console.log(car);
+				return car;
+			}, 
+
+			getYear: function(){
+				var year = "Rok produkcji: " + this.year;
+				console.log(year);
+				return year;
+			}
+		},
+
+		methods: {
+	
+		}
+	});
+
+*/
+
+	new Vue({
+
+		el: "#app",
+		data: {
+			number: 23
+		}, 
+		computed: {
+			/*
+			getNumber: function(){
+				var numbers = "Normal: " + this.number + "; Random: " + Math.random();
+				console.log(numbers);
+				return numbers;
+			}
+			*/
+		},
+
+		methods: {
+			getNumber: function(){
+				var numbers = "Normal: " + this.number + "; Random: " + Math.random();
+				console.log(numbers);
+				return numbers;
+			}
+		}
+	});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+<head>
+
+	<style>
+
+
+		[v-cloak] {
+
+			display: none;
+		}
+
+
+
+	</style>
+
+
+</head>
+<body>
+
+
+<div id="app" v-cloak>
+
+	<h1>Dodaj do koszyka</h1>
+
+	<form action="#">
+
+		<h2>Akcesoria</h2>
+
+		<input type="checkbox" /> Myszka<br/>
+		<input type="checkbox" /> Laptop<br/>
+		<input type="checkbox" /> Komputer stacjonarny<br/>
+		<input type="checkbox" /> Monitor<br/>
+		<input type="checkbox" /> Głośniki<br/>
+		<input type="checkbox" /> Podkładka pod mysz<br/>
+
+		<h2>Forma odbioru</h2>
+
+		<!-- Pokazań że z name działa, ale bez name Vue sobie też radzi -->
+
+		<input type="radio" /> Kurier<br/>
+		<input type="radio" /> Poczta<br/>
+		<input type="radio" /> Osobiście<br/><br/>
+
+		<input type="checkbox" /> Potwierdzam zgodność danych podanych w formularzu kontaktowym<br/><br 
+
+/>
+
+		<input type="submit" value="Wyślij" />
+
+	</form>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+
+
+new Vue ({
+
+	el: '#app',
+
+	data: {
+
+
+	}, 
+
+	computed: {
+
+
+	}
+
+});	
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,279 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+<head>
+
+	<style>
+
+		table {
+			width: 100%;
+			font-family: Arial;
+			text-align: center;
+		}
+
+		table td:nth-of-type(1) {
+			width: 50px;
+		}
+
+		table td:nth-of-type(2) {
+			width: 200px;
+		}
+
+		table td:nth-of-type(3) {
+			width: 100px;
+		}		
+
+		button {
+			float: right;
+		}
+
+		.select {
+			cursor: pointer;
+		}
+
+		.space td {
+			height: 10px;
+		}	
+
+		.info, 
+		.contents
+		{
+			background-color: #ccc;
+		}
+
+		[v-cloak] {
+
+			display: none;
+		}
+
+	</style>
+
+
+</head>
+<body>
+
+
+<div id="app" v-cloak>
+
+
+<h1>Akcesoria komputerowe</h1>
+
+<table>
+
+	
+	<thead>
+		<tr>
+			<th>Lp.</th>
+			<th>Produkt</th>
+			<th>Cena</th>
+			<th>Koszyk</th>
+			<th>Dostępność</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<tr class="contents" v-for="(product, n) of availableProductsA">  
+			<td>{{ n + 1 }}.</td>
+			<td>{{ product.product }} </td>
+			<td>{{ product.price }} {{ currency }}</td>
+			<td class="select" @click="select_A(n)">{{ product.selected }}</td>
+			<td><b>{{ product.comments }}</b></td>
+		</tr>
+			
+		<tr>
+			<td colspan="5">
+				<button type="button" @click="sortID_A">Domyślny układ</button>
+				<button type="button" @click="sortAZ_A">Alfabetycznie</button>
+				<button type="button" @click="sortPrice_A">Wg ceny</button>
+				<button type="button" @click="sortSelected_A">Wg zawartości koszyka</button>
+			</td>
+		</tr>
+
+	</tbody>
+
+
+</table>
+
+
+<h1>Akcesoria fotograficzne</h1>
+
+<table>
+
+	
+	<thead>
+		<tr>
+			<th>Lp.</th>
+			<th>Produkt</th>
+			<th>Cena</th>
+			<th>Koszyk</th>
+			<th>Dostępność</th>
+		</tr>
+	</thead>
+
+	<tbody>
+
+		<tr class="contents" v-for="(product, n) of availableProductsB">  
+			<td>{{ n + 1 }}.</td>
+			<td>{{ product.product }} </td>
+			<td>{{ product.price }} {{ currency }}</td>
+			<td class="select" @click="select_B(n)">{{ product.selected }}</td>
+			<td><b>{{ product.comments }}</b></td>
+		</tr>		
+
+		<tr>
+			<td colspan="5">
+				<button type="button" @click="sortID_B">Domyślny układ</button>
+				<button type="button" @click="sortAZ_B">Alfabetycznie</button>
+				<button type="button" @click="sortPrice_B">Wg ceny</button>
+				<button type="button" @click="sortSelected_B">Wg zawartości koszyka</button>
+			</td>
+		</tr>
+	</tbody>
+
+</table>
+
+
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+
+
+new Vue ({
+
+	el: '#app',
+
+	data: {
+		
+		availableProductsA: [
+
+			{	id: 1, 
+				product: 'Myszka',  
+				price: 50, 
+				selected: 'dodaj do koszyka',
+				comments: 'dostępny za 1 dzień'
+			},
+			{	id: 2, 
+				product: 'Laptop',  
+				price: 2550, 
+				selected: 'dodaj do koszyka',
+				comments: 'dostępny za 2 tygodnie'
+			},
+			{	id: 3, 
+				product: 'Komputer stacjonalrny',  
+				price: 2150, 
+				selected: 'dodaj do koszyka',
+				comments: 'dostępny'
+			},
+			{	id: 4, 
+				product: 'Monitor',  
+				price: 1400, 
+				selected: 'dodaj do koszyka',
+				comments: 'dostępny'
+			}
+	
+		],
+
+		availableProductsB: [
+
+			{	id: 1, 
+				product: 'Body Nikon D300S',  
+				price: 1000, 
+				selected: 'dodaj do koszyka',
+				comments: 'dostępny'
+			},
+			{	id: 2, 
+				product: 'Torba fotograficzna',  
+				price: 300, 
+				selected: 'dodaj do koszyka',
+				comments: 'dostępny'
+			},
+			{	id: 3, 
+				product: 'Statyw',  
+				price: 200, 
+				selected: 'dodaj do koszyka',
+				comments: 'dostępny'
+			},
+			{	id: 4, 
+				product: 'Obiektyw',  
+				price: 1500, 
+				selected: 'dodaj do koszyka',
+				comments: 'dostępny za 5 godzin'
+			},
+			{	id: 5, 
+				product: 'Zestaw kart pamięci',  
+				price: 150, 
+				selected: 'dodaj do koszyka',
+				comments: 'dostępny'
+			},
+			{	id: 6, 
+				product: 'Zdalny wyzwalacz migawki',  
+				price: 300, 
+				selected: 'dodaj do koszyka',
+				comments: 'dostępny za 5 godzin'
+			}
+
+		],		
+
+		currency: 'zł'
+
+	}, 
+
+	methods: {
+
+		// Sprzęt komputerowy
+
+		select_A: function (i) {
+			this.availableProductsA[i].selected = this.availableProductsA[i].selected == 'dodaj do koszyka' ? 'w koszyku' : 'dodaj do koszyka';
+		},
+
+		sortAZ_A: function(){
+			this.availableProductsA = _.sortBy(this.availableProductsA, ['product']);
+		},
+
+		sortID_A: function(){
+			this.availableProductsA = _.sortBy(this.availableProductsA, ['id']);
+		},
+
+		sortPrice_A: function(){
+			this.availableProductsA = _.sortBy(this.availableProductsA, ['price']);
+		},
+
+		sortSelected_A: function(){
+			this.availableProductsA = _.sortBy(this.availableProductsA, ['selected']);
+		},
+
+
+		// Sprzęt fotograficzny
+
+		select_B: function (i) {
+			this.availableProductsB[i].selected = this.availableProductsB[i].selected == 'dodaj do koszyka' ? 'w koszyku' : 'dodaj do koszyka';
+		},
+
+		sortAZ_B: function(){
+			this.availableProductsB = _.sortBy(this.availableProductsB, ['product']);
+		},
+
+		sortID_B: function(){
+			this.availableProductsB = _.sortBy(this.availableProductsB, ['id']);
+		},
+
+		sortPrice_B: function(){
+			this.availableProductsB = _.sortBy(this.availableProductsB, ['price']);
+		},
+
+		sortSelected_B: function(){
+			this.availableProductsB = _.sortBy(this.availableProductsB, ['selected']);
+		}
+
+
+
+	}
+
+});	
+
+
+</script>
+</body>
+</html>

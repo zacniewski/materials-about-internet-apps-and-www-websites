@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+
+	<style>
+
+
+		[v-cloak] {
+
+			display: none;
+		}
+
+	</style>
+
+
+</head>
+<body>
+
+
+	<div id="app" v-cloak>
+
+		<!--
+		<h1>{{ header }}</h1>
+
+		<p>Imię: {{ firstname }}</p>
+		<p>Nazwisko: {{ surname }}</p>
+		<p>Wiek: {{ age }}</p>
+		<p>Zawód: {{ profession }}</p>
+	-->
+
+		<business-card></business-card>
+		<business-card></business-card>
+		<business-card></business-card>
+		<business-card></business-card>
+		<business-card></business-card>
+
+	</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+
+
+/*
+
+Vue.component('business-card', {
+
+
+	template: `
+
+		<div>
+			<h1>{{ header }}</h1>
+
+			<p>Imię: {{ firstname }}</p>
+			<p>Nazwisko: {{ surname }}</p>
+			<p>Wiek: {{ age }}</p>
+			<p>Zawód: {{ profession }}</p>
+		</div>	
+
+		`,
+
+	data: function(){
+
+		return{
+			header: "Moja wizytówka",
+			firstname: "Jan",
+			surname: "Nowak",
+			age: 30,
+			profession: "Informatyk"
+		}
+	},
+
+	methods: {
+
+	},
+
+	computed: {
+
+	}	
+
+
+});
+
+*/
+
+
+var businessCard = {
+
+	template: `
+
+		<div>
+			<h1>{{ header }}</h1>
+
+			<p>Imię: {{ firstname }}</p>
+			<p>Nazwisko: {{ surname }}</p>
+			<p>Wiek: {{ age }}</p>
+			<p>Zawód: {{ profession }}</p>
+		</div>	
+
+		`,
+
+	data: function(){
+
+		return{
+			header: "Moja wizytówka",
+			firstname: "Jan",
+			surname: "Nowak",
+			age: 30,
+			profession: "Informatyk"
+		}
+	},
+
+	methods: {
+
+	},
+
+	computed: {
+
+	}	
+};
+
+
+new Vue ({
+
+	el: '#app',
+
+	
+	data: {
+
+		/*
+		header: "Moja wizytówka",
+		firstname: "Jan",
+		surname: "Nowak",
+		age: 30,
+		profession: "Informatyk"
+		*/
+
+	},
+
+	methods: {
+
+	},
+
+	computed: {
+
+	},
+
+	components: {
+
+		"business-card": businessCard
+
+	}
+
+
+});	
+
+
+</script>
+</body>
+</html>

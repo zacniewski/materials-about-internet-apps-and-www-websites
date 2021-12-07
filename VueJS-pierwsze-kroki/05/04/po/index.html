@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+
+	<style>
+
+
+		[v-cloak] {
+
+			display: none;
+		}
+
+
+
+	</style>
+
+
+</head>
+<body>
+
+
+<div id="app" v-cloak>
+
+	<h1>Dodaj do koszyka</h1>
+
+	<form action="#">
+
+		<h2>Akcesoria</h2>
+
+		<input type="checkbox" v-model="product1" true-value="tak" false-value="nie" /> Myszka<br/>
+		<input type="checkbox" v-model="product2" true-value="tak" false-value="nie"  /> Laptop<br/>
+		<input type="checkbox" v-model="product3" true-value="tak" false-value="nie"  /> Komputer stacjonarny<br/>
+		<input type="checkbox" v-model="product4" true-value="tak" false-value="nie"  /> Monitor<br/>
+		<input type="checkbox" v-model="product5" true-value="tak" false-value="nie"  /> Głośniki<br/>
+		<input type="checkbox" v-model="product6" true-value="tak" false-value="nie"  /> Podkładka pod mysz<br/>
+
+		<h2>Forma odbioru</h2>
+
+		<!-- Pokazań że z name działa, ale bez name Vue sobie też radzi -->
+
+		<input type="radio" v-model="delivery" value="k" /> Kurier<br/>
+		<input type="radio" v-model="delivery" value="p" /> Poczta<br/>
+		<input type="radio" v-model="delivery" value="o" /> Osobiście<br/><br/>
+
+		<input type="checkbox" v-model="contactOK" /> Potwierdzam zgodność danych podanych w formularzu kontaktowym<br/><br 
+
+/>
+
+		<input type="submit" value="Wyślij" :disabled="!isReady" />
+
+	</form>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+
+
+new Vue ({
+
+	el: '#app',
+
+	data: {
+
+		product1: 'nie',
+		product2: 'nie',
+		product3: 'nie',
+		product4: 'nie',
+		product5: 'nie',
+		product6: 'nie',
+
+		delivery: 'k',
+
+		contactOK: false
+
+	}, 
+
+	computed: {
+
+		isReady: function(){
+			return (this.product1=="tak" || this.product2=="tak" || this.product3=="tak" || this.product4=="tak" || this.product5=="tak" || this.product6=="tak") && this.contactOK;
+		}
+	}
+
+});	
+
+
+</script>
+</body>
+</html>

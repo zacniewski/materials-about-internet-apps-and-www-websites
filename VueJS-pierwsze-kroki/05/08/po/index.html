@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+
+	<style>
+
+
+		[v-cloak] {
+
+			display: none;
+		}
+
+		.shopping {
+
+			margin: 0 0 0 20px;
+		}
+
+		.summation {
+
+			margin-top: 10px;
+			padding: 20px;
+			border: 1px solid black;
+			background-color: #eee;
+
+		}
+
+		.summation h2 {
+			margin-top: 0;
+		}
+
+		.delivery {
+			border-top: 1px solid black;
+			padding-top: 10px;
+		}
+
+
+	</style>
+
+
+</head>
+<body>
+
+
+<div id="app" v-cloak>
+
+	<form action="#" v-if="products.length">
+
+		<h1>Dodaj do koszyka</h1>
+
+		<h2>Akcesoria</h2>
+
+		<template v-for="(product, i) in products">
+			<input type="checkbox" v-model="product.checked" ref="checkbox" @click="checkProducts(i)" true-value="tak" false-value="nie" /> {{ product.name }}<br/>
+		</template>
+
+		<h2>Forma odbioru</h2>
+
+		<template v-for="option in deliveryOptions">
+			<input type="radio" v-model="delivery" :value="option.option" /> {{ option.option }}<br/>
+		</template>
+
+
+		<select v-model="delivery">
+
+			<option v-for="option in deliveryOptions" :value="option.option"> {{ option.option }}</option>
+
+		</select><br />
+
+		<p>Sposób dostawy: {{ delivery }}</p><br />
+
+
+		<input type="checkbox" v-model="contactOK" /> {{ contactCon }}<br/>
+
+		<div class="summation" v-if="selected>0 && contactOK">
+			
+			<h2>Podsumowanie:</h2>
+
+			<h3>Zakupy</h3>
+
+			<p class="shopping" v-for="product in products" v-if="product.checked=='tak'">{{ product.name }}</p>
+
+			<p class="delivery"><b>Sposób dostawy: </b> {{ delivery }}</p>
+
+			<input type="submit" value="Wyślij" :disabled="!isReady" />
+
+		</div>
+
+
+
+	</form>
+
+	<p v-else>Brak asortymentu!</p>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+
+
+var app = new Vue ({
+
+	el: '#app',
+
+	data: {
+
+
+		products: [
+
+			{name: "Myszka", checked: 'nie'},
+			{name: "Laptop", checked: 'nie'},
+			{name: "Komputer stacjonarny", checked: 'nie'},
+			{name: "Monitor", checked: 'nie'},
+			{name: "Głośniki", checked: 'nie'},
+			{name: "Podkładka pod mysz", checked: 'nie'}
+
+			
+
+		],
+
+		deliveryOptions: [
+
+			{option: 'Kurier'},
+			{option: 'Poczta'},
+			{option: 'Osobiście'}
+
+		],
+
+		contactCon: "Potwierdzam zgodność danych podanych w formularzu kontaktowym",
+
+		delivery: '',
+
+		contactOK: false,
+
+		selected: 0
+
+	}, 
+
+	methods: {
+
+		checkProducts: function(i){
+
+			if(this.$refs.checkbox[i].checked) this.selected++;
+			else this.selected--;
+
+		},
+
+		setDelivery: function(){
+			this.delivery = this.deliveryOptions[1].option;
+		}
+
+	},
+
+	computed: {
+
+		isReady: function(){
+			return this.selected>0 && this.contactOK;
+		}
+	}
+
+});	
+
+app.setDelivery();
+
+</script>
+</body>
+</html>

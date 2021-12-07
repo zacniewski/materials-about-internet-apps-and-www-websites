@@ -22,4 +22,5 @@
   17. folder 'redis-python' zawiera skrypty pokazujące współpracę Pythona z Redisem oraz projekt ['image-parroter'](https://stackabuse.com/asynchronous-tasks-in-django-with-redis-and-celery/), obrazujący współpracę Django, Redisa i Celery  
   18. folder 'slides' zawiera pomocnicze materiały do laboratoriów      
   19. folder 'social-website' zawiera projekt 'bookmarks' (podstawowy projekt Django) z aplikacjami 'account' i 'images' autorstwa [Antonio Mele](https://github.com/PacktPublishing/Django-3-by-Example/tree/master/Chapter04)  
-  20. folder 'zastosowania-java-script' zawiera skrypty dotyczące wybranych zastosowań Java Script  
+  20. folder 'VueJS-pierwsze-kroki' zawiera przykłady rozpoczęcia pracy z frameworkiem VueJS oraz różnego rodzaju podstawowych zastosowań   
+  21. folder 'zastosowania-java-script' zawiera skrypty dotyczące wybranych zastosowań Java Script  

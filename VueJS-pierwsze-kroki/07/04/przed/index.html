@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+<head>
+
+	<style>
+
+
+		[v-cloak] {
+
+			display: none;
+		}
+
+
+	</style>
+
+
+</head>
+<body>
+
+	<div id="app" v-cloak>
+
+		<business-card
+			my-header="Wizytówka"
+			my-firstname="Jarosław"
+			my-surname="Nowak"
+			my-age="23"
+			my-profession="Informatyk"
+		></business-card>
+
+	</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+
+
+var businessCard = {
+
+	template: `
+
+		<div>
+
+			<h1>{{ header }}</h1>
+
+			<p>Imię: {{ firstname }}</p>
+			<p>Nazwisko: {{ surname }}</p>
+			<p>Wiek: {{ age }}</p>
+			<p>Zawód: {{ profession }}</p>
+
+		</div>		
+		`,
+
+	props: ["myHeader", 'myFirstname', 'mySurname', 'myAge', 'myProfession'],
+
+	data: function(){
+
+		return {
+		
+			header: this.myHeader,
+			firstname: this.myFirstname,
+			surname: this.mySurname,
+			age: this.myAge,
+			profession: this.myProfession
+
+		}
+	}
+
+}
+
+new Vue ({
+
+	el: '#app',
+
+	data: {
+
+		myHeaderU: "Wizytówka",
+		myFirstnameU: "Adam",
+		mySurnameU: "Kowalski",
+		myAgeU: 30,
+		myProfessionU: "Pisarz"
+
+	},
+
+	components: {
+		"business-card": businessCard 
+	}
+
+});	
+
+
+
+
+</script>
+</body>
+</html>

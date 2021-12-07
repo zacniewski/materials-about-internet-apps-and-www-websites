@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+
+	<style>
+
+
+		[v-cloak] {
+
+			display: none;
+		}
+
+
+	</style>
+
+
+</head>
+<body>
+
+	<div id="app" v-cloak>
+
+		<business-card
+			:my-header="myHeaderU"
+			:my-firstname="myFirstnameU"
+			:my-surname="mySurnameU"
+			:my-age="myAgeU"
+			:my-profession="myProfessionU"
+		></business-card>
+
+		<input v-model="myHeaderU" /><br />
+		<input v-model="myFirstnameU" /><br />
+		<input v-model="mySurnameU" /><br />
+		<input v-model="myAgeU" /><br />
+		<input v-model="myProfessionU" /><br />
+
+	</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+
+
+var businessCard = {
+
+	template: `
+
+		<div>
+			<h1>Props</h1>
+
+			<h2>{{ myHeader }}</h2>
+
+			<p>Imię: {{ myFirstname }}</p>
+			<p>Nazwisko: {{ mySurname }}</p>
+			<p>Wiek: {{ myAge }}</p>
+			<p>Zawód: {{ myProfession }}</p>
+
+
+			<h1>Data</h1>
+
+			<h2>{{ header }}</h2>
+
+			<p>Imię: {{ firstname }}</p>
+			<p>Nazwisko: {{ surname }}</p>
+			<p>Wiek: {{ age }}</p>
+			<p>Zawód: {{ profession }}</p>
+
+		</div>		
+		`,
+
+	props: ["myHeader", 'myFirstname', 'mySurname', 'myAge', 'myProfession'],
+
+	data: function(){
+
+		return {
+		
+			header: this.myHeader,
+			firstname: this.myFirstname,
+			surname: this.mySurname,
+			age: this.myAge,
+			profession: this.myProfession
+
+		}
+	}, 
+
+	watch: {
+
+		myHeader: function(){
+			this.header = this.myHeader;
+		},
+
+		myFirstname: function(){
+			this.firstname = this.myFirstname;
+		},
+
+		mySurname: function(){
+			this.surname = this.mySurname;
+		},
+
+		myAge: function(){
+			this.age = this.myAge;
+		},
+
+		myProfession: function(){
+			this.profession = this.myProfession;
+		}						
+
+	}
+
+}
+
+new Vue ({
+
+	el: '#app',
+
+	data: {
+
+		myHeaderU: "Wizytówka",
+		myFirstnameU: "Adam",
+		mySurnameU: "Kowalski",
+		myAgeU: 30,
+		myProfessionU: "Pisarz"
+
+	},
+
+	components: {
+		"business-card": businessCard 
+	}
+
+});	
+
+
+
+
+</script>
+</body>
+</html>

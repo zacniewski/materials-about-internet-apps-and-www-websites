@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+
+	<style>
+
+
+		[v-cloak] {
+
+			display: none;
+		}
+
+		.component {
+			padding: 15px;
+			border: 1px solid blue;
+		}
+
+	</style>
+
+
+</head>
+<body>
+
+	<div id="app" v-cloak>
+
+		<business-card
+			:header-we="headerC2" :header-wy.sync="headerC1" 
+			:firstname-we="firstnameC2" :firstname-wy.sync="firstnameC1"
+			:surname-we="surnameC2" :surname-wy.sync="surnameC1"
+			:age-we="ageC2" :age-wy.sync="ageC1"
+			:profession-we="professionC2" :profession-wy.sync="professionC1">
+		</business-card>	
+
+	
+		<business-card 
+			:header-we="headerC1" :header-wy.sync="headerC2" 
+			:firstname-we="firstnameC1" :firstname-wy.sync="firstnameC2"
+			:surname-we="surnameC1" :surname-wy.sync="surnameC2"
+			:age-we="ageC1" :age-wy.sync="ageC2"
+			:profession-we="professionC1" :profession-wy.sync="professionC2">
+		</business-card>		
+
+
+	</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+
+
+
+var businessCard = {
+
+
+	template: `
+
+		<div class="component">
+
+			<h2>{{ headerWe }}</h2>
+
+			<p>Imię: {{ firstnameWe }}</p>
+			<p>Nazwisko: {{ surnameWe }}</p>
+			<p>Wiek: {{ ageWe }}</p>
+			<p>Zawód: {{ professionWe }}</p>	
+
+			<input placeholder="Nagłowek" v-model="header" /><br />	
+			<input placeholder="Imię" v-model="firstname" /><br />	
+			<input placeholder="Nazwisko" v-model="surname" /><br />	
+			<input placeholder="Wiek" v-model="age" /><br />	
+			<input placeholder="Zawód" v-model="profession" /><br />			
+		</div>		
+		`,
+
+
+	props: ['headerWe', 'firstnameWe', 'surnameWe', 'ageWe', 'professionWe',
+			'headerWy', 'firstnameWy', 'surnameWy', 'ageWy', 'professionWy'],
+
+	data: function(){
+
+		return {
+			
+			header: this.headerWe,
+			firstname: this.firstnameWe,
+			surname: this.surnameWe,
+			age: this.ageWe,
+			profession: this.professionWe
+			
+		}
+	},
+
+	watch: {
+
+		// -------------- Wejście ---------------------------------------
+
+
+		header: function(){
+			this.$emit("update:headerWy", this.header);
+		},
+
+		firstname: function(){
+			this.$emit("update:firstnameWy", this.firstname);
+		},
+
+		surname: function(){
+			this.$emit("update:surnameWy", this.surname);
+		},
+
+		age: function(){
+			this.$emit("update:ageWy", this.age);
+		},
+
+		profession: function(){
+			this.$emit("update:professionWy", this.profession);
+		}		
+					
+	}
+}
+
+
+
+var app = new Vue ({
+
+	el: '#app',
+
+	data: {
+
+		headerC1: "",
+		firstnameC1: "",
+		surnameC1: "",
+		ageC1: "",
+		professionC1: "",
+
+
+		headerC2: "",
+		firstnameC2: "",
+		surnameC2: "",
+		ageC2: "",
+		professionC2: ""		
+
+	},
+
+	components: {
+		"business-card": businessCard
+	}
+
+});	
+
+
+
+</script>
+</body>
+</html>

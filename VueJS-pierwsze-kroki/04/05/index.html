@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+
+	<style>
+
+		table {
+			width: 100%;
+			border: 1px solid black;
+			font-family: Arial;
+			text-align: center;
+		}
+
+		table td {
+			border: 1px solid black;
+		}
+
+		table tr {
+			cursor: pointer;
+		}
+
+		table td:nth-of-type(1) {
+			width: 50px;
+		}
+
+		table td:nth-of-type(2) {
+			width: 200px;
+		}
+
+		table td:nth-of-type(3) {
+			width: 100px;
+		}		
+
+		td input {
+			width: 100%;
+		}		
+
+		[v-cloak] {
+
+			display: none;
+		}
+
+		tr button {
+			float: right;
+		}
+
+	</style>
+
+
+</head>
+<body>
+
+
+<div id="app" v-cloak>
+
+
+<h1>Produkty w sklepie</h1>
+
+<table v-if='availableProducts.length'>
+
+	
+	<thead>
+		<tr>
+			<th>Lp.</th>
+			<th>Produkt</th>
+			<th>Cena</th>
+			<th>Koszyk</th>
+			<th>Uwagi</th>
+		</tr>
+	</thead>
+
+	<tbody>
+
+
+		<tr v-for="(product, n) of availableProducts" :key="product.id">  
+
+			<td>{{ n + 1 }}.</td>
+			<td>{{ product.product }} </td>
+			<td>{{ product.price }} {{ currency }}</td>
+			<td @click="select(n)">{{ product.selected }}</td>
+			<td><input /></td>
+
+		</tr>
+
+		<tr>
+			<td colspan="5">
+				<button type="button" @click="sortID">Domyślny układ</button>
+				<button type="button" @click="sortAZ">Alfabetycznie</button>
+				<button type="button" @click="sortPrice">Wg ceny</button>
+				<button type="button" @click="sortSelected">Wg zawartości koszyka</button>
+			</td>
+		</tr>
+
+	</tbody>
+
+
+</table>
+
+<p v-else>Brak produktów w sklepie...</p>
+
+
+
+
+
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+
+
+new Vue ({
+
+	el: '#app',
+
+	data: {
+		
+		availableProducts: [
+
+		
+			{id: 1, product: 'Myszka',  price: 50, selected: 'dodaj do koszyka'},
+			{id: 2, product: 'Laptop',  price: 2550, selected: 'dodaj do koszyka'},
+			{id: 3, product: 'Komputer stacjonalrny',  price: 2150, selected: 'dodaj do koszyka'},
+			{id: 4, product: 'Monitor',  price: 1400, selected: 'dodaj do koszyka'}
+
+		
+				
+		],
+
+		currency: 'zł'
+
+	}, 
+
+	methods: {
+
+		select: function (i) {
+			this.availableProducts[i].selected = this.availableProducts[i].selected == 'dodaj do koszyka' ? 'w koszyku' : 'dodaj do koszyka';
+		},
+
+		sortAZ: function(){
+			this.availableProducts = _.sortBy(this.availableProducts, ['product']);
+		},
+
+		sortID: function(){
+			this.availableProducts = _.sortBy(this.availableProducts, ['id']);
+		},
+
+		sortPrice: function(){
+			this.availableProducts = _.sortBy(this.availableProducts, ['price']);
+		},
+
+		sortSelected: function(){
+			this.availableProducts = _.sortBy(this.availableProducts, ['selected']);
+		}
+	}
+
+});	
+
+
+</script>
+</body>
+</html>

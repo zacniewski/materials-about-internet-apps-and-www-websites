@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+
+	<style>
+
+
+		[v-cloak] {
+
+			display: none;
+		}
+
+	</style>
+
+
+</head>
+<body>
+
+	<div id="app" v-cloak>
+	
+		<ul>
+			<li v-for="pos in listPositions">{{ pos.position }}</li>
+		</ul>
+	
+		<button @click="random">Losuj</button>
+
+	</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+
+
+
+new Vue ({
+
+	el: '#app',
+
+	data: {
+		listPositions: [
+
+			{id: 1, position: "Pozycja 1"},
+			{id: 2, position: "Pozycja 2"},
+			{id: 3, position: "Pozycja 3"},
+			{id: 4, position: "Pozycja 4"},
+			{id: 5, position: "Pozycja 5"},
+			{id: 6, position: "Pozycja 6"},
+			{id: 7, position: "Pozycja 7"},
+
+		]
+	},
+
+	methods: {
+
+		random: function(){
+
+			this.listPositions = _.shuffle(this.listPositions);
+
+		}
+	}
+
+});	
+
+
+</script>
+</body>
+</html>

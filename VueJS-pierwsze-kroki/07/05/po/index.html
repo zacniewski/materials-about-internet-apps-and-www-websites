@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+
+	<style>
+
+
+		[v-cloak] {
+
+			display: none;
+		}
+
+
+	</style>
+
+
+</head>
+<body>
+
+	<div id="app" v-cloak>
+
+		<business-card 
+			:my-header.sync="myHeaderU" 
+			:my-firstname.sync="myFirstnameU"
+			:my-surname.sync="mySurnameU"
+			:my-age.sync="myAgeU"
+			:my-profession.sync="myProfessionU">
+		</business-card>	
+
+
+		<h1>Poza komponentem</h1>
+
+		<h2>{{ myHeaderU }}</h2>
+
+		<p>Imię: {{ myFirstnameU }}</p>
+		<p>Nazwisko: {{ mySurnameU }}</p>
+		<p>Wiek: {{ myAgeU }}</p>
+		<p>Zawód: {{ myProfessionU }}</p>
+
+
+	</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+
+
+
+var businessCard = {
+
+
+	template: `
+
+		<div>
+
+			<h1>W komponencie</h1>
+
+			<h2>{{ header }}</h2>
+
+			<p>Imię: {{ firstname }}</p>
+			<p>Nazwisko: {{ surname }}</p>
+			<p>Wiek: {{ age }}</p>
+			<p>Zawód: {{ profession }}</p>	
+
+			<input placeholder="Nagłowek" v-model="header" /><br />	
+			<input placeholder="Imię" v-model="firstname" /><br />	
+			<input placeholder="Nazwisko" v-model="surname" /><br />	
+			<input placeholder="Wiek" v-model="age" /><br />	
+			<input placeholder="Zawód" v-model="profession" /><br />			
+		</div>		
+		`,
+
+
+	props: ["myHeader", 'myFirstname', 'mySurname', 'myAge', 'myProfession'],
+
+	data: function(){
+
+		return {
+			
+			header: this.myHeader,
+			firstname: this.myFirstname,
+			surname: this.mySurname,
+			age: this.myAge,
+			profession: this.myProfession
+			
+		}
+	}, 
+
+	watch: {
+
+		header: function(val){
+			this.$emit("update:myHeader", val);
+		},
+
+		firstname: function(val){
+			this.$emit("update:myFirstname", val);
+		},
+
+		surname: function(val){
+			this.$emit("update:mySurname", val);
+		},
+
+		age: function(val){
+			this.$emit("update:myAge", val);
+		},
+
+		profession: function(val){
+			this.$emit("update:myProfession", val);
+		}								
+
+	}
+
+}
+
+
+
+var app = new Vue ({
+
+	el: '#app',
+
+	data: {
+
+		myHeaderU: "",
+		myFirstnameU: "",
+		mySurnameU: "",
+		myAgeU: "",
+		myProfessionU: ""
+
+	},
+
+	components: {
+		"business-card": businessCard
+	}
+
+});	
+
+
+
+</script>
+</body>
+</html>

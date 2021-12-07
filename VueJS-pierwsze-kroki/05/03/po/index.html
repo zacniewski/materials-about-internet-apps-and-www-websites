@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+
+	<style>
+
+		[v-cloak] {
+
+			display: none;
+		}
+
+		input {
+			width: 200px;
+		}
+
+	</style>
+
+
+</head>
+<body>
+
+
+<div id="app" v-cloak>
+
+	<h1>Uzupełnij dane</h1>
+
+	<form action="#">
+
+		<p><input placeholder="Imię i nazwisko" :value="name" @input="name=$event.target.value" /> Długość: {{ name.length }}</p>
+		<p><input placeholder="Wiek"  :value="age" @input="age=$event.target.value"/> Długość: {{ age.length }} </p>
+		<p><input placeholder="Zawód" :value="profession" @input="profession=$event.target.value"/> Długość: {{ profession.length }}</p>
+		<p><input placeholder="Forma zatrudnienia" :value="employment" @input="employment=$event.target.value"/> Długość: {{ employment.length }}</p>
+		<p><input placeholder="Wynagrodzenie" :value="salary" @input="salary=$event.target.value" /> Długość: {{ salary.length }}</p>
+
+		<input type="submit" value="Wyślij" :disabled="!isReady" />
+
+
+		<h2>Sprawdź poprawność danych</h2>
+
+		<p><input :value="name" @input="name=$event.target.value" /> <b>Imię i nazwisko</b> </p>
+		<p><input :value="age" @input="age=$event.target.value"/> <b>Wiek</b> </p>
+		<p><input :value="profession" @input="profession=$event.target.value"/> <b>Zawód</b></p>
+		<p><input :value="employment" @input="employment=$event.target.value"/> <b>Forma zatrudnienia</b> </p>
+		<p><input :value="salary" @input="salary=$event.target.value"/> <b>Wynagrodzenie</b> </p>
+
+	</form>
+
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+
+
+new Vue ({
+
+	el: '#app',
+
+	data: {
+		name: "",
+		age: "",
+		profession: "",
+		employment: "",
+		salary: ""
+	},
+
+	computed: {
+		isReady: function(){
+			return this.name && this.age && this.profession && this.employment && this.salary;
+		}
+	}
+});
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+
+	<style>
+
+
+		[v-cloak] {
+
+			display: none;
+		}
+
+		.square {
+			width: 100px;
+			height: 100px;
+		}
+
+		.red {
+			background-color: red;
+		}
+
+		.yellow {
+			background-color: yellow;
+			margin-left: 100px;
+		}
+
+		.green {
+			background-color: green;
+			margin-left: 200px;
+		}
+
+		.zanikanie-enter {
+			opacity: 0; 
+		}
+
+		.zanikanie-enter-active {
+			transition: opacity 2s ease-in-out;
+		}
+
+		.zanikanie-enter-to {
+			/*opacity: 1;*/
+		}
+
+
+		.zanikanie-leave {
+			/*opacity: 1;*/ 
+		}
+
+		.zanikanie-leave-active {
+			transition: opacity 2s ease-in-out;
+		}	
+
+		.zanikanie-leave-to {
+			opacity: 0;
+		}
+	
+	
+	
+
+	</style>
+
+
+</head>
+<body>
+
+	<!--
+
+	Vue dodaje do elementów następujące klasy:
+
+	Te klasy, kiedy element jest pokazywany:
+
+	v-enter
+	v-enter-to
+	v-enter-active
+
+	Te klasy, kiedy element jest ukrywany:
+
+	v-leave
+	v-leave-to
+	v-leave-active
+
+	-->
+
+
+	<div id="app" v-cloak>
+
+		<p>
+			<input type="radio" value="red" v-model="mode" /> Czerwony
+			<input type="radio" value="yellow" v-model="mode" /> Zółty
+			<input type="radio" value="green" v-model="mode" /> Zielony
+		</p>
+
+		<transition name="zanikanie">
+			<div class="square red" v-if="mode=='red'"></div>
+		</transition>
+
+		<transition name="zanikanie">
+			<div class="square yellow" v-if="mode=='yellow'"></div>
+		</transition>
+
+		<transition name="zanikanie">
+			<div class="square green" v-if="mode=='green'"></div>
+		</transition>
+
+	</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+
+
+
+new Vue ({
+
+	el: '#app',
+
+	data: {
+		mode: 'red'
+	}
+
+});	
+
+
+</script>
+</body>
+</html>

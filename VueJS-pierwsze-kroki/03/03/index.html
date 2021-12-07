@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Vue.js - kurs video</title>
+
+    <style>
+	    [v-cloak] {
+	    	display: none;
+		} 
+
+		textarea, input {
+			display: block;
+			margin: 0;
+			margin-bottom: 5px;
+		}
+
+		textarea {
+
+			width: 200px;			
+			max-width: 200px;
+			min-width: 200px;
+
+			height: 100px;
+			min-height: 100px;		
+			max-height: 100px;	
+
+			resize: none;			
+		}
+
+		input {
+			width: 80px;
+		}
+
+	</style>
+
+</head>
+<body>
+
+<div id="app" v-cloak>
+	<form action="file.php" method="post">
+			<textarea ></textarea>
+			<input type="button" @click.ctrl.shift="resetShift" value="Resetuj" /> 
+			<input type="button" @click.ctrl.shift="submitShift" value="Prześlij" />
+	</form>		
+</div>	
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.21/vue.js"></script>
+<script>
+
+	new Vue({
+
+		el: "#app",
+		data: {}, 
+		methods: {
+			reset: function(e){
+				console.log('Funkcja reset');
+			},
+
+			submit: function(e){
+				console.log('Funkcja submit');				
+			},	
+
+			resetShift: function(e){
+				console.log('Funkcja reset z ctrl');
+			},
+
+			submitShift: function(e){
+				console.log('Funkcja submit z ctrl');				
+			}					
+		}
+	});
+
+
+</script>
+</body>
+</html>
