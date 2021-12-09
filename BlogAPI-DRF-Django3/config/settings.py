@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     # apki typu 3rd party
     'rest_framework',
     'rest_framework.authtoken',
-    'dj_rest_auth'
+    'dj_rest_auth',
 
     # apki lokalne
     'posts.apps.PostsConfig',
