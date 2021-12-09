@@ -33,5 +33,9 @@ możliwość dodawania postów w widoku listy oraz korekty postu w widoku detalu
 - dodanie wzorca URL w głównym pliku `urls.py`, dotyczącego adresów URL korzystających z DRF,  
 - pojawienie się opcji wylogowania i logowania,  
 - dodanie zezwolenia `permission_classes` na poziomie widoku (w pliku `views.py`),  
-- w pierwszej kolejności zezwolenie `IsAuthenticated` do sprawdzenia,  
+- w pierwszej kolejności zezwolenie `IsAuthenticated` do sprawdzenia w ww. pliku,  
+- usunięcie zezwolenia na poziomie widoku w pliku `views.py` i dodanie zezwolenia na poziomie projektu w pliku `settings.py`,  
+- należy sprawdzić w działaniu pozostałe zezwolenia: `IsAdminUser` oraz `'`IsAuthenticatedOrReadOnly`,  
+- dodanie własnych ("custom") zezwoleń w pliku `permissions.py` (plik wewnątrz apki 'posts'),  
+- ww. zezwoleń należy użyć w pliku `views.py` w polu `permission_classes`,  
 - 
