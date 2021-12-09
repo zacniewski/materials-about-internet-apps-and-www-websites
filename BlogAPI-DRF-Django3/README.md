@@ -13,4 +13,7 @@
 - dodanie modelu `Post` w aplikacji `posts`,  
 - migracja 2-etapowa,  
 - dodanie modelu `Post` do panelu admina,  
+- utworzenie 'superusera',  
+- uruchomienie serwera deweloperskiego,  
+- dodanie posta poprzez panel admina,  
 - 
