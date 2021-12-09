@@ -16,4 +16,5 @@
 - utworzenie 'superusera',  
 - uruchomienie serwera deweloperskiego,  
 - dodanie posta poprzez panel admina,  
+- opcjonalne dodanie testów (plik `tests.py`) i uruchomienie testów `python manage.py test`,  
 - 
