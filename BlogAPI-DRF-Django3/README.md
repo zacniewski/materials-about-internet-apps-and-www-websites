@@ -56,3 +56,8 @@ możliwość dodawania postów w widoku listy oraz korekty postu w widoku detalu
 - dodanie wbudowanego frameworka `sites` w 'INSTALLED_APPS',  
 - 1-etapowa migracja,  
 - dodanie nowego wzorca URL w głównym pliku `urls.py` dla rejestracji za pomocą `dj-rest-auth`,  
+- sprawdzenie procesu rejestracji nowego usera za pomocą 'dj-rest-auth' (auth token + email w konsoli + nowy token w panelu admina),  
+
+
+##### Viewsets
+- ...
