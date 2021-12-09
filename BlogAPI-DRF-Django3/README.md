@@ -19,5 +19,5 @@
 - opcjonalne dodanie testów (plik `tests.py`) i uruchomienie testów `python manage.py test`,  
 
 ##### DRF  
-- instalacja Django Rest Framework i dodanie wpisu w `INSTALLED_APPS`,  
-- 
+- instalacja Django Rest Framework i dodanie wpisu o nim w `INSTALLED_APPS`,  
+- dodanie podstawowych zezwoleń (`AllowAny`) w ustawieniach,  
