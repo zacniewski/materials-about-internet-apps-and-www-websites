@@ -21,3 +21,7 @@
 ##### DRF  
 - instalacja Django Rest Framework i dodanie wpisu o nim w `INSTALLED_APPS`,  
 - dodanie podstawowych zezwoleń (`AllowAny`) w ustawieniach,  
+- dodanie wpisu w głównym pliku `urls.py`, dotyczącego adresów URL w aplikacji `posts`,  
+- utworzenie pliku `urls.py` w aplikacji `posts` (adresy URL korzystają z widoków, których jeszcze nie ma!),  
+- utworzenie pliku serializacji `serializers.py`w aplikacji `posts`,  
+- 
