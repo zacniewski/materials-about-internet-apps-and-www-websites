@@ -38,4 +38,8 @@ możliwość dodawania postów w widoku listy oraz korekty postu w widoku detalu
 - należy sprawdzić w działaniu pozostałe zezwolenia: `IsAdminUser` oraz `'`IsAuthenticatedOrReadOnly`,  
 - dodanie własnych ("custom") zezwoleń w pliku `permissions.py` (plik wewnątrz apki 'posts'),  
 - ww. zezwoleń należy użyć w pliku `views.py` w polu `permission_classes`,  
+
+##### Uwierzytelnianie
+- zapoznanie się z rodzajami uwierzytelnień (Basic, Session, Token), w tym ich wadami i zaletami,  
+- dodanie ustawienia `DEFAULT_AUTHENTICATION_CLASSES` w słowniku REST_FRAMEWORK (plik `settings.py`), 
 - 
