@@ -12,4 +12,5 @@
 - pierwsza migracja (1-etapowa),  
 - dodanie modelu `Post` w aplikacji `posts`,  
 - migracja 2-etapowa,  
+- dodanie modelu `Post` do panelu admina,  
 - 
