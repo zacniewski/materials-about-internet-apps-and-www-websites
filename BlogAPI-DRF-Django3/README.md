@@ -42,4 +42,5 @@ możliwość dodawania postów w widoku listy oraz korekty postu w widoku detalu
 ##### Uwierzytelnianie
 - zapoznanie się z rodzajami uwierzytelnień (Basic, Session, Token), w tym ich wadami i zaletami,  
 - dodanie ustawienia `DEFAULT_AUTHENTICATION_CLASSES` w słowniku REST_FRAMEWORK (plik `settings.py`), 
+- w pierwszej wersji należy dodać ustawienia `Basic` i `Session`,  
 - 
