@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     # apki typu 3rd party
     'rest_framework',
     'rest_framework.authtoken',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     'dj_rest_auth',
 
     # apki lokalne
