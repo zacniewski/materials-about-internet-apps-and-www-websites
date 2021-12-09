@@ -18,13 +18,20 @@
 - dodanie posta poprzez panel admina,  
 - opcjonalne dodanie testów (plik `tests.py`) i uruchomienie testów `python manage.py test`,  
 
-##### DRF  
+##### Django Rest Framework (DRF )
 - instalacja Django Rest Framework i dodanie wpisu o nim w `INSTALLED_APPS`,  
 - dodanie podstawowych zezwoleń (`AllowAny`) w ustawieniach,  
-- dodanie wpisu w głównym pliku `urls.py`, dotyczącego adresów URL w aplikacji `posts`,  
+- dodanie wpisu (wzorca URL) w głównym pliku `urls.py`, dotyczącego adresów URL w aplikacji `posts`,  
 - utworzenie pliku `urls.py` w aplikacji `posts` (adresy URL korzystają z widoków, których jeszcze nie ma!),  
 - utworzenie pliku serializacji `serializers.py`w aplikacji `posts`,  
 - utworzenie widoków listy i detali (plik `views.py`) bazujących na klasach (CBV), wykorzystujących uprzednio stworzony serializer,  
 - sprawdzenie działania API, pod adresem określonym w plikach `urls.py` (powinien być już widoczny styl bazujący na DRF oraz powinna być 
 możliwość dodawania postów w widoku listy oraz korekty postu w widoku detalu),  
+
+##### Zezwolenia  
+- utworzenie nowego usera, który nie jest adminem,  
+- dodanie wzorca URL w głównym pliku `urls.py`, dotyczącego adresów URL korzystających z DRF,  
+- pojawienie się opcji wylogowania i logowania,  
+- dodanie zezwolenia `permission_classes` na poziomie widoku (w pliku `views.py`),  
+- w pierwszej kolejności zezwolenie `IsAuthenticated` do sprawdzenia,  
 - 
