@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'dj_rest_auth',
+    'dj_rest_auth.registration'
 
     # apki lokalne
     'posts.apps.PostsConfig',
@@ -144,3 +145,6 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.BasicAuthentication'
      ],
 }
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+SITE_ID = 1
