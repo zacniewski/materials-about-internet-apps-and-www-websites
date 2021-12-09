@@ -46,5 +46,6 @@ możliwość dodawania postów w widoku listy oraz korekty postu w widoku detalu
 - dodanie obsługi tokenów: `TokenAuthentication` w 'DEFAULT_AUTHENTICATION_CLASSES' oraz `rest_framework.authtoken` w 'INSTALLED_APPS',  
 - konieczna 1-etapowa migracja dla ze względu na `authtoken`,  
 - sprawdzenie, czy w panelu admina pojawiła się grupa 'Tokens' (tzn., że migracja przebiegła prawidłowo),  
-- dodawanie punktów końcowych (endpoints) do logowania, wylogowania itp. z użyciem 'dj-rest-auth',  
-- 
+- dodawanie punktów końcowych (endpoints) do logowania, wylogowania itp. z użyciem `dj-rest-auth`,  
+- dodanie wpisu do 'INSTALLED_APS' oraz nowego wzorca URL w główny pliku `urls.py` dla `dj-rest-auth`,  
+-  
