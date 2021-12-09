@@ -24,4 +24,7 @@
 - dodanie wpisu w głównym pliku `urls.py`, dotyczącego adresów URL w aplikacji `posts`,  
 - utworzenie pliku `urls.py` w aplikacji `posts` (adresy URL korzystają z widoków, których jeszcze nie ma!),  
 - utworzenie pliku serializacji `serializers.py`w aplikacji `posts`,  
+- utworzenie widoków listy i detali (plik `views.py`) bazujących na klasach (CBV), wykorzystujących uprzednio stworzony serializer,  
+- sprawdzenie działania API, pod adresem określonym w plikach `urls.py` (powinien być już widoczny styl bazujący na DRF oraz powinna być 
+możliwość dodawania postów w widoku listy oraz korekty postu w widoku detalu),  
 - 
