@@ -10,4 +10,6 @@
 - utworzenie projektu (w przykładzie nazwa projektu to `config`),  
 - utworzenie apki (`posts` w przykładzie) i dodanie wpisu o niej w `INSTALLED_APPS,  
 - pierwsza migracja (1-etapowa),  
+- dodanie modelu `Post` w aplikacji `posts`,  
+- migracja 2-etapowa,  
 - 
