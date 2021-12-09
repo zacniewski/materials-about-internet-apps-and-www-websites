@@ -17,4 +17,7 @@
 - uruchomienie serwera deweloperskiego,  
 - dodanie posta poprzez panel admina,  
 - opcjonalne dodanie testów (plik `tests.py`) i uruchomienie testów `python manage.py test`,  
+
+##### DRF  
+- instalacja Django Rest Framework i dodanie wpisu w `INSTALLED_APPS`,  
 - 
