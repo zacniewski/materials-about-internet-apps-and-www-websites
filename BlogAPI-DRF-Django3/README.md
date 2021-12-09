@@ -47,9 +47,12 @@ możliwość dodawania postów w widoku listy oraz korekty postu w widoku detalu
 - konieczna 1-etapowa migracja dla ze względu na `authtoken`,  
 - sprawdzenie, czy w panelu admina pojawiła się grupa 'Tokens' (tzn., że migracja przebiegła prawidłowo),  
 - dodawanie punktów końcowych (endpoints) do logowania, wylogowania itp. z użyciem `dj-rest-auth`,  
-- dodanie wpisu do 'INSTALLED_APS' oraz nowego wzorca URL w główny pliku `urls.py` dla `dj-rest-auth`,  
+- dodanie wpisu do 'INSTALLED_APS' oraz nowego wzorca URL w głównym pliku `urls.py` dla `dj-rest-auth`,  
 - sprawdzenie ww. endpointów (login, logout, password reset),  
 
 ##### Rejestracja usera
 - instalacja `django-allauth`,  
-- 
+- dodanie wpisów w dla `django-allauth` w 'INSTALLED_APPS',  
+- dodanie wbudowanego frameworka `sites` w 'INSTALLED_APPS',  
+- 1-etapowa migracja,  
+- dodanie nowego wzorca URL w głównym pliku `urls.py` dla rejestracji za pomocą `dj-rest-auth`,  
