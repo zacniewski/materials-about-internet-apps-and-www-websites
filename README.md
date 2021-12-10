@@ -5,6 +5,7 @@
   1. folder 'blog-185ic' zawiera aplikację 'blog' z tutorialu [Django Girls](https://tutorial.djangogirls.org/pl/)  
   2. folder 'blog-API-with-DRF' zawiera aplikację 'post' z obsługą zezwoleń (permissions) i uwierzytelnianiem użytkownika  
   3. folder 'blog-na-heroku' zawiera aplikację ww. 'blog', zmodyfikowaną w celu jej publikacji na [Heroku](https://blog-zacniewski.herokuapp.com/blog/)  
+  3a. folder 'BlogAPI-DRF-Django3' zawiera aplikację z obsługą zezwoleń (permissions), tokenów, uwierzytelnień, viewsets'ów, router'ów itd.   
   4. folder 'books' zawiera projekt 'Book Store' z aplikacjami 'pages', 'books' i 'users'  
   5. folder 'django-chat-server' zawiera podstawowy projekt Django, bazujący na django-channels   
   6. folder 'django-for-api-wincent' zawiera projekt 'library' (podstawowy projekt Django + DRF) oraz projekt 'ToDo' (podstawowe połączenie Django + DRF + CORS + React)  
