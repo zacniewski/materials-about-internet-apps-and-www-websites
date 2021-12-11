@@ -63,4 +63,9 @@ możliwość dodawania postów w widoku listy oraz korekty postu w widoku detalu
 - utworzenie serializera dla modelu `User` w pliku `posts/serializers.py`,  
 - utworzenie widoków dla listy userów i detali usera w pliku `views.py`,  
 - dodanie adresów URL dla nowo utworzonych widoków i ich sprawdzenie,  
+- zastąpienie widoków (CBV) odpowiednimi viewset'ami (wystąpią chwilowe błędy w konsoli),  
+- uaktualnienie pliku `urls.py` poprze dodanie klasy `SimpleRouter` (błędy powinny zniknąć),  
+- sprawdzenie zmian,
+
+##### Schemas
 - 
