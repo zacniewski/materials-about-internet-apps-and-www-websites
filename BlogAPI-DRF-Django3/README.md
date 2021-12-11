@@ -60,4 +60,6 @@ możliwość dodawania postów w widoku listy oraz korekty postu w widoku detalu
 
 
 ##### Viewsets
-- ...
+- utworzenie serializera dla modelu `User` w pliku `posts/serializers.py`,  
+- utworzenie widoków dla listy userów i detali usera w pliku `views.py`,  
+- 
