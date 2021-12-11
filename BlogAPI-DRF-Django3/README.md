@@ -70,4 +70,7 @@ możliwość dodawania postów w widoku listy oraz korekty postu w widoku detalu
 ##### Schemas
 - instalacja pakietów do obsługi OpenAPI,  
 - generacji `openapi-schema`,  
+- dodanie w głównym pliku `urls.py` obsługi schematu OpenAPI,  
+- sprawdzenie ww. adresu URL,  
+- instalacja pakietu do obsługi dokumentacji API,  
 - 
