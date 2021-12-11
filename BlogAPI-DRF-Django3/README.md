@@ -68,4 +68,6 @@ możliwość dodawania postów w widoku listy oraz korekty postu w widoku detalu
 - sprawdzenie zmian,
 
 ##### Schemas
+- instalacja pakietów do obsługi OpenAPI,  
+- generacji `openapi-schema`,  
 - 
