@@ -47,7 +47,7 @@ możliwość dodawania postów w widoku listy oraz korekty postu w widoku detalu
 - konieczna 1-etapowa migracja dla ze względu na `authtoken`,  
 - sprawdzenie, czy w panelu admina pojawiła się grupa 'Tokens' (tzn., że migracja przebiegła prawidłowo),  
 - dodawanie punktów końcowych (endpoints) do logowania, wylogowania itp. z użyciem `dj-rest-auth`,  
-- dodanie wpisu do 'INSTALLED_APS' oraz nowego wzorca URL w głównym pliku `urls.py` dla `dj-rest-auth`,  
+- dodanie wpisu do 'INSTALLED_APPS' oraz nowego wzorca URL w głównym pliku `urls.py` dla `dj-rest-auth`,  
 - sprawdzenie ww. endpointów (login, logout, password reset),  
 
 ##### Rejestracja usera
@@ -62,4 +62,5 @@ możliwość dodawania postów w widoku listy oraz korekty postu w widoku detalu
 ##### Viewsets
 - utworzenie serializera dla modelu `User` w pliku `posts/serializers.py`,  
 - utworzenie widoków dla listy userów i detali usera w pliku `views.py`,  
+- dodanie adresów URL dla nowo utworzonych widoków,  
 - 
