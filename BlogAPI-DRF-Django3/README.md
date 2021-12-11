@@ -73,4 +73,5 @@ możliwość dodawania postów w widoku listy oraz korekty postu w widoku detalu
 - dodanie w głównym pliku `urls.py` obsługi schematu OpenAPI,  
 - sprawdzenie ww. adresu URL,  
 - instalacja pakietu do obsługi dokumentacji API,  
-- 
+- dodanie w głównym pliku `urls.py` obsługi dokumentacji OpenAPI (drf_yasg, Swagger) i korekta poprzedniej wersji,  
+- sprawdzenie endpointów z dokumentacją,  
