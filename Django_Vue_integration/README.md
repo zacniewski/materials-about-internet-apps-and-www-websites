@@ -16,6 +16,11 @@
 - dodanie modelu Tutorial oraz 2-etapowa migracja,  
 - utworzenie serializera dla modelu Tutorial,  
 - utworzenie pliku 'urls.py' w aplikacji 'tutorials' oraz dodanie wpisu o tychże adresach w głównym pliku 'urls.py',  
-- 
+- utworzenie widoków dla:
+  - listy tutoriali,  
+  - szczegółów tutoriala,  
+  - listy opublikowanych tutoriali.  
+
+
 
 ##### Frontend
