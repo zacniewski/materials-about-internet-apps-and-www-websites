@@ -5,3 +5,12 @@
   - idea działania:  
   ![obrazek](https://www.bezkoder.com/wp-content/uploads/2020/03/django-vue-js-tutorial-rest-framework-crud-architecture.png)
   
+##### Backend
+- architektura:  
+![obrazek](https://www.bezkoder.com/wp-content/uploads/2020/03/django-mysql-crud-rest-framework-archirecture.png)
+- utworzenie i aktywacja środowiska wirtualnego,  
+- instalacja Django 3.2.10 (LTS) oraz DRF,  
+- utworzenie nowego projektu ('django_backend' tu na repo) i aplikacji 'tutorials',  
+- dodanie wpisu o DRF w 'INSTALLED_APPS',  
+
+##### Frontend
