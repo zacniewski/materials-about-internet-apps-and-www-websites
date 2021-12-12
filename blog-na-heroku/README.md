@@ -1,5 +1,5 @@
 #### Prosta integracja Django + Vue.js
-- przykład bazuje na [tutorialu](https://vsupalov.com/vue-js-in-django-template/) "Vue.js In A Django Template",, 
+- przykład bazuje na [tutorialu](https://vsupalov.com/vue-js-in-django-template/) "Vue.js In A Django Template", 
 - dodany został widok onazwie 'random_items':  
 ```python
 def random_items(request):
