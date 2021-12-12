@@ -14,6 +14,7 @@
 - dodanie wpisu o DRF w 'INSTALLED_APPS',  
 - obsługa [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) (instalacja pakietu oraz wpisy w pliku 'settings.py',  
 - dodanie modelu Tutorial oraz 2-etapowa migracja,  
+- utworzenie serializera dla modelu Tutorial,  
 - 
 
 ##### Frontend
