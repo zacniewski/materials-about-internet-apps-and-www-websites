@@ -12,5 +12,7 @@
 - instalacja Django 3.2.10 (LTS) oraz DRF,  
 - utworzenie nowego projektu ('django_backend' tu na repo) i aplikacji 'tutorials',  
 - dodanie wpisu o DRF w 'INSTALLED_APPS',  
+- obsługa [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) (instalacja pakietu oraz wpisy w pliku 'settings.py',  
+- 
 
 ##### Frontend
