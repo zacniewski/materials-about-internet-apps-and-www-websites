@@ -1,4 +1,5 @@
 from django.http.response import JsonResponse
+from rest_framework import generics
 from rest_framework.parsers import JSONParser
 from rest_framework import status
 
@@ -65,3 +66,8 @@ def tutorial_list_published(request):
     if request.method == 'GET':
         tutorials_serializer = TutorialSerializer(tutorials, many=True)
         return JsonResponse(tutorials_serializer.data, safe=False)
+
+
+class TutorialsList(generics.ListCreateAPIView):
+    queryset = Tutorial.objects.all()
+    serializer_class = TutorialSerializer
