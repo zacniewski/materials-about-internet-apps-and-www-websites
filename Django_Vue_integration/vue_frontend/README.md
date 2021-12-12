@@ -1,4 +1,4 @@
-# vue-3-crud
+# vue_frontend
 
 ## Project setup
 ```
