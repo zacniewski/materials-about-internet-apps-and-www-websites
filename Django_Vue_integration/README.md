@@ -22,5 +22,9 @@
   - listy opublikowanych tutoriali.  
 
 ##### Frontend
+- architektura:  
+![obrazek](https://www.bezkoder.com/wp-content/uploads/2021/04/vue-3-crud-example-axios-router-app-diagram.png)
+- instalacja `node.js` i 'vue-cli',   
 - utworzenie aplikacji 'vue_frontend' za pomocą `vue-cli`,  
-- 
+- instalacja pakietów (np. za pomocą `npm`),  
+- cały frontend jest [tutaj](https://github.com/bezkoder/vue-3-crud/tree/master/src),  
