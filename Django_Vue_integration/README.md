@@ -21,6 +21,6 @@
   - szczegółów tutoriala,  
   - listy opublikowanych tutoriali.  
 
-
-
 ##### Frontend
+- utworzenie aplikacji 'vue_frontend' za pomocą `vue-cli`,  
+- 
