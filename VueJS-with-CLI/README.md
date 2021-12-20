@@ -23,5 +23,5 @@
 - dla każdej wybranej "usługi" (Babel, TypeScript i ESLint) został utworzony osobny plik konfiguracyjny,  
 
 ###### Komponenty
-- tworzymy plik `AppHeader.vue` w folderze 'src' z kodem nowego komponentu,  
--   
+- tworzymy plik `AppHeader.vue` w folderze 'src' z kodem nowego komponentu dla nagłówka,  
+- tworzymy plik `AppFooter.vue` w folderze 'src' z kodem nowego komponentu dla stopki,  
