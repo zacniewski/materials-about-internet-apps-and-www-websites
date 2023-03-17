@@ -1,16 +1,15 @@
 {% extends 'blog/base.html' %}
-{% load blog_tags %}
 
 {% block content %}
-    {% for post in posty %}
+    {% for post in posts %}
         <div class="post">
             <div class="date">
-                <p>published: {{ post.published_date }}</p>
+                {{ post.published_date }}
             </div>
-            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+            <h1>
+                <a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a>
+            </h1>
             <p>{{ post.text|linebreaksbr }}</p>
         </div>
     {% endfor %}
-    <h3>This is my blog. I've written {% total_posts %} posts so far.</h3>
-
 {% endblock %}

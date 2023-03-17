@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog.apps.BlogConfig',
+    'history_tracker.apps.HistoryTrackerConfig',
 ]
 
 MIDDLEWARE = [
@@ -48,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'history_tracker.get_request.RequestMiddleware',
 ]
 
 ROOT_URLCONF = 'mysite.urls'
@@ -122,5 +124,5 @@ STATIC_URL = '/static/'
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
-    "/home/artur/Desktop/blog-185ic/static",
+    "/home/artur/Desktop/PROJECTS/materials-about-internet-apps-and-www-websites/blog-185ic/static",
 ]
